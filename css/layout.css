@@ -308,7 +308,8 @@
 }
 
 /* ---------- MENU / OVERLAY PANELS ---------- */
-.overlay {
+.overlay,
+.menu {
   position: fixed;
   inset: 0;
   z-index: var(--z-overlay);
@@ -326,11 +327,21 @@
   to { opacity: 1; }
 }
 
-[data-theme="light"] .overlay {
+[data-theme="light"] .overlay,
+[data-theme="light"] .menu {
   background: rgba(245, 247, 251, 0.94);
 }
 
-.overlay.open { display: block; }
+.overlay.open,
+.menu.open { display: block; }
+
+/* Menu close button (fixed top-right) */
+#btnClose {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: var(--z-modal);
+}
 
 .overlay-header {
   max-width: var(--menu-max);
