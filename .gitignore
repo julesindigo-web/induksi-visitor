@@ -31,3 +31,5 @@ vercel-debug.log*
 # Temp
 tmp
 temp
+
+.vercel
