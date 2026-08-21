@@ -1,0 +1,180 @@
+/* ============================================================
+   TOKENS — Design System Foundation
+   PT. Sifang Mining Indonesia — K3L Induction Platform
+   ============================================================ */
+
+:root {
+  /* ---------- COLOR SYSTEM ---------- */
+  /* Brand */
+  --brand-indigo: #2b3990;
+  --brand-indigo-soft: #3a4ba8;
+  --brand-indigo-glow: rgba(43, 57, 144, 0.45);
+
+  /* Surface (Dark — default) */
+  --bg-0: #050a14;
+  --bg-1: #070d1a;
+  --bg-2: #0b1424;
+  --bg-3: #0f1b30;
+  --bg-4: #12213a;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-2: rgba(255, 255, 255, 0.07);
+  --surface-3: rgba(255, 255, 255, 0.10);
+
+  /* Lines */
+  --line: rgba(148, 163, 184, 0.16);
+  --line-2: rgba(148, 163, 184, 0.28);
+  --line-strong: rgba(148, 163, 184, 0.42);
+
+  /* Text */
+  --text: #eaf1fa;
+  --text-2: #cfe0f2;
+  --muted: #9db0c6;
+  --dim: #7b8ea6;
+
+  /* Semantic Accents */
+  --amber: #fbbf24;
+  --amber-2: #f59e0b;
+  --amber-soft: rgba(251, 191, 36, 0.12);
+  --amber-line: rgba(251, 191, 36, 0.35);
+  --amber-glow: rgba(251, 191, 36, 0.55);
+
+  --teal: #2dd4bf;
+  --teal-soft: rgba(45, 212, 191, 0.12);
+  --teal-line: rgba(45, 212, 191, 0.35);
+  --teal-glow: rgba(45, 212, 191, 0.45);
+
+  --green: #4ade80;
+  --green-soft: rgba(74, 222, 128, 0.12);
+  --green-line: rgba(74, 222, 128, 0.35);
+
+  --red: #f87171;
+  --red-soft: rgba(248, 113, 113, 0.12);
+  --red-line: rgba(248, 113, 113, 0.35);
+  --red-glow: rgba(248, 113, 113, 0.45);
+
+  --blue: #5b7cfa;
+  --blue-soft: rgba(91, 124, 250, 0.12);
+  --blue-line: rgba(91, 124, 250, 0.35);
+
+  --orange: #fb923c;
+  --orange-soft: rgba(251, 146, 60, 0.12);
+  --orange-line: rgba(251, 146, 60, 0.35);
+
+  --magenta: #d946ef;
+  --magenta-soft: rgba(217, 70, 239, 0.12);
+  --magenta-line: rgba(217, 70, 239, 0.35);
+
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #2dd4bf 100%);
+  --grad-warm: linear-gradient(135deg, #fbbf24, #f59e0b);
+  --grad-cool: linear-gradient(135deg, #2dd4bf, #5b7cfa);
+  --grad-danger: linear-gradient(135deg, #f87171, #fbbf24);
+  --grad-deep: linear-gradient(180deg, var(--bg-0), var(--bg-1));
+  --grad-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  --grad-quote: linear-gradient(135deg, rgba(251, 191, 36, 0.14), rgba(45, 212, 191, 0.08));
+
+  /* Hazard Stripes */
+  --hazard-stripes: repeating-linear-gradient(-45deg,
+    var(--amber-2) 0 12px,
+    rgba(255, 255, 255, 0.06) 12px 24px);
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --font-display: "Space Grotesk", "Manrope", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+
+  --fs-xs: 10.5px;
+  --fs-sm: 12.5px;
+  --fs-base: 14px;
+  --fs-md: 15.5px;
+  --fs-lg: 18px;
+  --fs-xl: clamp(20px, 2.4vw, 26px);
+  --fs-2xl: clamp(24px, 3.4vw, 40px);
+  --fs-3xl: clamp(30px, 5.4vw, 58px);
+
+  /* ---------- SPACING ---------- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 22px;
+  --s-6: 28px;
+  --s-7: 36px;
+  --s-8: 48px;
+  --s-9: 64px;
+
+  /* ---------- RADIUS ---------- */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --r-xl: 22px;
+  --r-2xl: 28px;
+  --r-full: 999px;
+
+  /* ---------- LAYOUT ---------- */
+  --top-h: 64px;
+  --bot-h: 84px;
+  --content-max: 1180px;
+  --menu-max: 1080px;
+
+  /* ---------- EFFECTS ---------- */
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 22px 60px rgba(0, 0, 0, 0.45);
+  --shadow-glow-amber: 0 0 28px rgba(251, 191, 36, 0.35);
+  --shadow-glow-teal: 0 0 28px rgba(45, 212, 191, 0.35);
+  --shadow-glow-indigo: 0 0 28px rgba(43, 57, 144, 0.55);
+
+  --blur-sm: blur(8px);
+  --blur-md: blur(14px);
+  --blur-lg: blur(20px);
+
+  /* ---------- MOTION ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-mid: 320ms;
+  --dur-slow: 520ms;
+
+  /* Z-INDEX SCALE */
+  --z-base: 1;
+  --z-elev: 10;
+  --z-stage: 20;
+  --z-topbar: 50;
+  --z-overlay: 70;
+  --z-modal: 80;
+  --z-toast: 90;
+  --z-tooltip: 95;
+}
+
+/* ============================================================
+   LIGHT THEME OVERRIDE
+   ============================================================ */
+[data-theme="light"] {
+  --bg-0: #f5f7fb;
+  --bg-1: #eef2f8;
+  --bg-2: #e5ebf4;
+  --bg-3: #d8e0ec;
+  --bg-4: #c9d3e0;
+
+  --surface: rgba(0, 0, 0, 0.04);
+  --surface-2: rgba(0, 0, 0, 0.06);
+  --surface-3: rgba(0, 0, 0, 0.09);
+
+  --line: rgba(15, 23, 42, 0.14);
+  --line-2: rgba(15, 23, 42, 0.22);
+  --line-strong: rgba(15, 23, 42, 0.36);
+
+  --text: #0f172a;
+  --text-2: #1e293b;
+  --muted: #475569;
+  --dim: #64748b;
+
+  --grad-deep: linear-gradient(180deg, #f5f7fb, #eef2f8);
+  --grad-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4));
+
+  --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.10);
+  --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.14);
+  --shadow-lg: 0 22px 60px rgba(15, 23, 42, 0.20);
+}

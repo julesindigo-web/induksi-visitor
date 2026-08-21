@@ -1,0 +1,88 @@
+/* ============================================================
+   GLOSSARY — Searchable HSE glossary overlay
+   ============================================================ */
+
+const Glossary = (() => {
+  let data = null;
+
+  async function load() {
+    if (data) return data;
+    try {
+      const r = await fetch('data/glossary.json');
+      data = await r.json();
+    } catch (e) { data = { items: [] }; }
+    return data;
+  }
+
+  async function open() {
+    await load();
+    const overlay = ensureOverlay();
+    overlay.innerHTML = `
+      <div class="overlay-header">
+        <div class="overlay-title">📖 Glosarium K3L</div>
+        <div class="overlay-actions">
+          <button class="iconbtn" id="glossClose" aria-label="Tutup">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+      <div style="max-width:var(--menu-max); margin:0 auto;">
+        <div class="gloss-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg>
+          <input id="glossQ" type="search" placeholder="Cari istilah... (mis. LOTO, APD, HIRADC)" autocomplete="off"/>
+        </div>
+        <div class="gloss-grid" id="glossGrid"></div>
+      </div>
+    `;
+    overlay.classList.add('open');
+    render(data.items);
+    const q = document.getElementById('glossQ');
+    q.focus();
+    q.addEventListener('input', e => {
+      const term = e.target.value.trim().toLowerCase();
+      if (!term) return render(data.items);
+      const filtered = data.items.filter(it =>
+        it.t.toLowerCase().includes(term) || it.d.toLowerCase().includes(term)
+      );
+      render(filtered);
+    });
+    document.getElementById('glossClose').addEventListener('click', close);
+  }
+
+  function render(items) {
+    const g = document.getElementById('glossGrid');
+    if (!g) return;
+    if (!items.length) {
+      g.innerHTML = '<div style="padding:30px; text-align:center; color:var(--muted)">Tidak ada istilah ditemukan.</div>';
+      return;
+    }
+    g.innerHTML = items.map(it => `
+      <div class="gloss-item">
+        <b>${escapeHtml(it.t)}</b>
+        <span>${escapeHtml(it.d)}</span>
+      </div>
+    `).join('');
+  }
+
+  function ensureOverlay() {
+    let o = document.getElementById('glossOverlay');
+    if (!o) {
+      o = document.createElement('div');
+      o.id = 'glossOverlay';
+      o.className = 'overlay';
+      document.body.appendChild(o);
+    }
+    return o;
+  }
+
+  function close() {
+    const o = document.getElementById('glossOverlay');
+    if (o) o.classList.remove('open');
+  }
+
+  function escapeHtml(s) {
+    return (s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  return { open, close };
+})();

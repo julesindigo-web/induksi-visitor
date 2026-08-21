@@ -1,0 +1,364 @@
+/* ============================================================
+   LAYOUT — App Shell, Topbar, Botbar, Stage, Menu
+   ============================================================ */
+
+#app { position: relative; z-index: var(--z-base); height: 100vh; }
+
+/* ---------- TOPBAR ---------- */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--top-h);
+  z-index: var(--z-topbar);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px;
+  background: rgba(7, 13, 26, 0.82);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  transition: background var(--dur-mid) var(--ease-out);
+}
+
+[data-theme="light"] .topbar {
+  background: rgba(245, 247, 251, 0.85);
+}
+
+.logo-chip {
+  width: 100px;
+  height: 44px;
+  border-radius: 13px;
+  background: #fff;
+  background-image: url("../assets/logo-full.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding: 6px 8px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 22px var(--brand-indigo-glow), 0 0 0 1px rgba(255,255,255,0.18);
+  overflow: hidden;
+  transition: transform var(--dur-mid) var(--ease-spring);
+  position: relative;
+}
+
+.logo-chip:hover { transform: scale(1.05) rotate(-1deg); }
+.logo-chip svg { width: 32px; height: 32px; opacity: 0; }
+
+.brand {
+  line-height: 1.15;
+  min-width: 0;
+  flex: 1;
+}
+
+.brand b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brand span {
+  display: block;
+  font-size: 10.5px;
+  color: var(--muted);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.top-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modlabel {
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  color: var(--amber);
+  border: 1px solid var(--amber-line);
+  background: var(--amber-soft);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: kicker-fade 0.3s var(--ease-out);
+}
+
+@keyframes kicker-fade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+
+.counter {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  min-width: 70px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Progress bar */
+.progress {
+  position: fixed;
+  top: var(--top-h);
+  left: 0; right: 0;
+  height: 3px;
+  z-index: var(--z-topbar);
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.progress i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--amber), var(--teal), var(--amber));
+  background-size: 200% 100%;
+  transition: width 0.45s var(--ease-out);
+  box-shadow: 0 0 14px var(--amber-glow);
+  animation: bar-shimmer 3s linear infinite;
+}
+
+@keyframes bar-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ---------- ICON BUTTONS ---------- */
+.iconbtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
+  position: relative;
+}
+
+.iconbtn:hover {
+  background: var(--surface-2);
+  transform: translateY(-1px);
+  border-color: var(--amber-line);
+}
+
+.iconbtn:active { transform: translateY(0) scale(0.96); }
+
+.iconbtn svg { width: 18px; height: 18px; }
+
+.iconbtn .tip {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-3);
+  color: var(--text);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line-2);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity var(--dur-fast);
+}
+
+.iconbtn:hover .tip { opacity: 1; }
+
+/* ---------- BOTBAR ---------- */
+.botbar {
+  position: fixed;
+  left: 0; right: 0;
+  bottom: 0;
+  height: var(--bot-h);
+  z-index: var(--z-topbar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(7, 13, 26, 0.88);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--line);
+}
+
+[data-theme="light"] .botbar {
+  background: rgba(245, 247, 251, 0.92);
+}
+
+.navbtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 14px;
+  cursor: pointer;
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.08em;
+  transition: all var(--dur-fast) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.navbtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s var(--ease-out);
+}
+
+.navbtn:hover::before { transform: translateX(100%); }
+
+.navbtn:hover {
+  background: var(--surface-2);
+  transform: translateY(-2px);
+}
+
+.navbtn.primary {
+  background: linear-gradient(135deg, var(--amber-2), var(--amber));
+  color: #241503;
+  border: none;
+  box-shadow: 0 10px 28px rgba(245, 158, 11, 0.40);
+}
+
+.navbtn.primary:hover {
+  box-shadow: 0 14px 36px rgba(245, 158, 11, 0.55);
+  transform: translateY(-2px);
+}
+
+.navbtn[disabled] {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.navbtn svg { width: 16px; height: 16px; }
+
+/* ---------- STAGE ---------- */
+.stage {
+  position: fixed;
+  top: calc(var(--top-h) + 3px);
+  bottom: var(--bot-h);
+  left: 0; right: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: var(--z-stage);
+  scroll-behavior: smooth;
+}
+
+.stage::-webkit-scrollbar { width: 8px; }
+
+.slide {
+  display: none;
+  min-height: 100%;
+  padding: 34px 20px 60px;
+  position: relative;
+}
+
+.slide.active {
+  display: block;
+  animation: slide-in 0.55s var(--ease-out);
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+.slide.leaving {
+  animation: slide-out 0.25s var(--ease-in-out) forwards;
+}
+
+@keyframes slide-out {
+  from { opacity: 1; }
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+.inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+/* ---------- MENU / OVERLAY PANELS ---------- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  background: rgba(4, 8, 16, 0.88);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  display: none;
+  padding: calc(var(--top-h) + 14px) 18px 30px;
+  overflow-y: auto;
+  animation: fade-in 0.3s var(--ease-out);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+[data-theme="light"] .overlay {
+  background: rgba(245, 247, 251, 0.94);
+}
+
+.overlay.open { display: block; }
+
+.overlay-header {
+  max-width: var(--menu-max);
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.overlay-title {
+  font-size: 18px;
+  color: var(--amber);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.overlay-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.overlay-close {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: var(--z-modal);
+}

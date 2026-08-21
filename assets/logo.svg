@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="lg-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b3990"/>
+      <stop offset="100%" stop-color="#1a2266"/>
+    </linearGradient>
+  </defs>
+  <!-- Hexagonal outline -->
+  <path d="M60 7 L106 33 V87 L60 113 L14 87 V33 Z"
+        stroke="url(#lg-stroke)" stroke-width="12"
+        stroke-linejoin="round" stroke-linecap="round"
+        pathLength="100" stroke-dasharray="40 6 40 6 8 0"/>
+  <!-- Stylized S -->
+  <path d="M78 36 H46 a8 8 0 0 0 -8 8 v6 a8 8 0 0 0 8 8 h28 a8 8 0 0 1 8 8 v6 a8 8 0 0 1 -8 8 H44"
+        stroke="url(#lg-stroke)" stroke-width="12"
+        stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

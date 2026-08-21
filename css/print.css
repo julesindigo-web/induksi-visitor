@@ -1,0 +1,87 @@
+/* ============================================================
+   PRINT — Print styles for handouts + certificate
+   ============================================================ */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  body::before, body::after,
+  .particles, .confetti,
+  .topbar, .botbar, .progress,
+  .overlay, .toast { display: none !important; }
+
+  #app { height: auto !important; }
+
+  .stage {
+    position: static !important;
+    overflow: visible !important;
+    top: 0; bottom: 0;
+  }
+
+  .slide {
+    display: block !important;
+    page-break-after: always;
+    min-height: auto;
+    padding: 18px 0;
+    animation: none !important;
+  }
+
+  .slide:last-child { page-break-after: auto; }
+
+  .kicker,
+  .lead,
+  .cards,
+  ul.checks,
+  .rules,
+  .two,
+  .flow,
+  .panelbox,
+  .bigquote,
+  .footnote,
+  .stats,
+  .hazard { color: #000 !important; }
+
+  .card,
+  .panelbox,
+  .rule,
+  ul.checks li {
+    border: 1px solid #cbd5e1 !important;
+    background: #f8fafc !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  .card .ico,
+  .rule .n { background: #fff7ed !important; }
+
+  /* Certificate print styling */
+  .cert {
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin: 0 auto;
+  }
+
+  /* Hide interactive elements when printing */
+  .sig-canvas,
+  .siren-demo,
+  .navbtn,
+  .iconbtn { display: none !important; }
+}
+
+/* Hide print-only elements on screen */
+.print-only { display: none; }
+
+@media print {
+  .print-only { display: block; }
+  .screen-only { display: none !important; }
+}

@@ -1,0 +1,233 @@
+{
+  "pretest": [
+    {
+      "q": "Apa yang harus Anda lakukan jika melihat retakan (tension crack) di tepi highwall?",
+      "opts": [
+        "Lapor ke supervisor setelah shift selesai",
+        "STOP WORK, menjauh, dan lapor dispatcher/geoteknik segera",
+        "Foto untuk dokumentasi, lalu lanjut bekerja",
+        "Pindahkan rambu pengaman untuk akses alat"
+      ],
+      "a": 1,
+      "fb": "Tanda bahaya geoteknik adalah situasi darurat. Langkah pertama selalu menjauh, lalu lapor."
+    },
+    {
+      "q": "Saat alarm darurat 3× panjang berbunyi, tindakan pertama Anda adalah…",
+      "opts": [
+        "Menunggu instruksi di tempat kerja",
+        "Lari ke parkiran untuk menyelamatkan kendaraan",
+        "Hentikan pekerjaan, amankan diri, menuju muster point lewat jalur evakuasi",
+        "Menelepon keluarga"
+      ],
+      "a": 2,
+      "fb": "Prosedur darurat standar: Stop → Aman → Muster Point lewat jalur evakuasi."
+    },
+    {
+      "q": "APD mana yang WAJIB dipakai di seluruh area operasional site?",
+      "opts": [
+        "Hanya helm dan rompi",
+        "Helm, kacamata, sepatu safety, rompi, sarung tangan (sesuai tugas)",
+        "Bebas, sesuai selera pekerja",
+        "Hanya saat ada inspektur"
+      ],
+      "a": 1,
+      "fb": "APD minimum: helm, kacamata, boots, rompi. Sarung tangan sesuai tugas."
+    },
+    {
+      "q": "Batas kecepatan umum light vehicle di haul road yang licin (laterit hujan) adalah…",
+      "opts": [
+        "Sama seperti kondisi kering",
+        "Diturunkan signifikan dan jaga jarak aman lebih besar",
+        "Tidak ada batas, asal hati-hati",
+        "Naik sedikit karena visibility lebih jelas"
+      ],
+      "a": 1,
+      "fb": "Laterit hujan kehilangan traksi drastis. Turunkan kecepatan + perbesar jarak aman atau STOP."
+    },
+    {
+      "q": "Konsep Stop Work Authority (SWA) berarti…",
+      "opts": [
+        "Hanya manajer yang boleh menghentikan pekerjaan",
+        "Setiap orang berhak & wajib menghentikan kerja yang tidak aman, tanpa retaliasi",
+        "Hanya berlaku saat ada audit",
+        "Berhenti kerja = otomatis kena sanksi"
+      ],
+      "a": 1,
+      "fb": "SWA adalah hak & kewajiban semua level. Perusahaan menjamin tidak ada retaliasi untuk pelapor yang beritikad baik."
+    }
+  ],
+  "posttest": {
+    "passing": 80,
+    "sections": {
+      "lsr": {
+        "title": "Life-Saving Rules — Wajib 100% Benar",
+        "critical": true,
+        "questions": [
+          {
+            "q": "LSR #1: 'Fit for Work' berarti…",
+            "opts": [
+              "Boleh minum obat tidur keras saat shift malam",
+              "Tidak bekerja dalam pengaruh alkohol, narkoba, atau obat yang menurunkan kesadaran",
+              "Boleh bekerja bila hanya sedikit pengaruh",
+              "Bebas, asalkan tidak ketahuan"
+            ],
+            "a": 1
+          },
+          {
+            "q": "LSR #5: LOTO sebelum maintenance. Prinsip utamanya…",
+            "opts": [
+              "Isolasi & kunci seluruh sumber energi, verifikasi nol energi, baru bekerja",
+              "Matikan alat lalu langsung kerja cepat",
+              "Boleh dilepas lock orang lain bila mendesak",
+              "Cukup tag saja tanpa lock"
+            ],
+            "a": 0
+          },
+          {
+            "q": "LSR #6: Kerja di ketinggian. Fall protection wajib pada…",
+            "opts": [
+              "≥ 5 m saja",
+              "≥ 1,8 m dengan anchor tersertifikasi + harness",
+              "Hanya di atas tower",
+              "Tidak wajib bila ada tangga"
+            ],
+            "a": 1
+          },
+          {
+            "q": "LSR #7: Confined space. Masuk tanpa…",
+            "opts": [
+              "Boleh, asal cepat",
+              "Wajib permit, gas test, attendant — dilarang masuk tanpa syarat itu",
+              "Boleh masuk asal ada senior",
+              "Boleh masuk asal membawa senter"
+            ],
+            "a": 1
+          },
+          {
+            "q": "LSR #8: Jangan bypass pengaman. Tindakan Anda bila melihat interlock dinonaktifkan…",
+            "opts": [
+              "Diam saja, bukan urusan saya",
+              "Lapor supervisor / hentikan kerja, jangan melanjutkan",
+              "Foto dan share ke medsos",
+              "Perbaiki sendiri supaya kerja lancar"
+            ],
+            "a": 1
+          }
+        ]
+      },
+      "umum": {
+        "title": "Pengetahuan Umum K3L",
+        "passing": 80,
+        "questions": [
+          {
+            "q": "Hierarki pengendalian risiko yang BENAR (dari atas ke bawah)…",
+            "opts": [
+              "APD → Administratif → Rekayasa → Substitusi → Eliminasi",
+              "Eliminasi → Substitusi → Rekayasa → Administratif → APD",
+              "Administratif → Eliminasi → Rekayasa → APD → Substitusi",
+              "Rekayasa → Eliminasi → APD → Administratif → Substitusi"
+            ],
+            "a": 1,
+            "fb": "Eliminasi bahaya adalah yang paling efektif. APD adalah pertahanan TERAKHIR."
+          },
+          {
+            "q": "Saat terjadi tumpahan BBM kecil (~5 liter) di area workshop, tindakan BENAR…",
+            "opts": [
+              "Siram ke drainase agar cepat hilang",
+              "Pasang barricade, gunakan spill kit, lapor supervisor, bersihkan & dokumentasikan",
+              "Biarkan menguap sendiri",
+              "Tutup dengan tanah dan diamkan"
+            ],
+            "a": 1,
+            "fb": "Tumpahan kecil pun wajib dilaporkan. Zero uncontrolled spill."
+          },
+          {
+            "q": "Tanda heat stroke yang membedakannya dari kelelahan biasa…",
+            "opts": [
+              "Haus",
+              "Kulit panas & kering, kebingungan, penurunan kesadaran — DARURAT MEDIS",
+              "Menguap",
+              "Kaki pegal"
+            ],
+            "a": 1,
+            "fb": "Heat stroke = kegawatan. Dinginkan & panggil medis segera."
+          },
+          {
+            "q": "Yang termasuk gaya berat (gravity) dalam sumber energi LOTO…",
+            "opts": [
+              "Beban tergantung, pegas tertekan, bagian yang bisa jatuh",
+              "Hanya listrik",
+              "Hanya hidrolik",
+              "Hanya bahan kimia"
+            ],
+            "a": 0,
+            "fb": "Energi gravitasi sering terlewat: beban gantung, pegas, counterweight, dump body."
+          },
+          {
+            "q": "Saat ragu apakah pekerjaan aman, hal terbaik yang Anda lakukan…",
+            "opts": [
+              "Lanjut cepat supaya tidak tertinggal",
+              "Tanya rekan, kalau iya ya lanjut",
+              "STOP WORK — minta klarifikasi & JSA baru dari supervisor",
+              "Lapor ke akhir shift"
+            ],
+            "a": 2,
+            "fb": "Ketika ragu, jawabannya adalah STOP. Lebih baik berhenti 5 menit daripada cedera seumur hidup."
+          },
+          {
+            "q": "Nikel laterit yang basah dapat berperilaku seperti…",
+            "opts": [
+              "Pasir biasa",
+              "Lumpur cair (liquefaction) — dapat menelan alat",
+              "Batu keras",
+              "Air biasa"
+            ],
+            "a": 1
+          },
+          {
+            "q": "Teknik PASS untuk APAR adalah…",
+            "opts": [
+              "Push, Aim, Start, Shoot",
+              "Pull, Aim, Squeeze, Sweep",
+              "Press, Attack, Stop, Spray",
+              "Pakai, Angkat, Semprot, Selesai"
+            ],
+            "a": 1
+          },
+          {
+            "q": "Tujuan utama toolbox meeting harian adalah…",
+            "opts": [
+              "Sesi ngalor-ngidul sebelum kerja",
+              "Membahas tugas, bahaya, cuaca, dan perubahan kondisi sebelum shift",
+              "Mengisi daftar kehadiran",
+              "Mengulang SOP yang sudah dihafal"
+            ],
+            "a": 1
+          },
+          {
+            "q": "Kelas api yang MANA menggunakan air BUKAN pemadam yang tepat?",
+            "opts": [
+              "Kelas A (kayu/kertas)",
+              "Kelas B (cairan mudah terbakar)",
+              "Kelas D (logam mudah terbakar)",
+              "Kelas A dan B"
+            ],
+            "a": 2,
+            "fb": "Logam (Kelas D) bereaksi hebat dengan air — gunakan powder khusus."
+          },
+          {
+            "q": "Jika Anda melihat rekanan bekerja tanpa helm, tindakan yang paling tepat…",
+            "opts": [
+              "Diam saja, urusannya dia",
+              "Menegur dengan hormat & mengingatkan aturan APD",
+              "Foto untuk lapor HRD",
+              "Minta dia bayar denda"
+            ],
+            "a": 1,
+            "fb": "Budaya saling menegur (buddy care) adalah fondasi safety. Lakukan dengan hormat."
+          }
+        ]
+      }
+    }
+  }
+}

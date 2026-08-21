@@ -1,0 +1,92 @@
+/* ============================================================
+   RESPONSIVE — Media queries for tablets and mobile
+   ============================================================ */
+
+/* Large tablets / small laptops */
+@media (max-width: 1100px) {
+  :root { --content-max: 960px; }
+}
+
+/* Tablets */
+@media (max-width: 860px) {
+  .two { grid-template-columns: 1fr; }
+  .cert-details { grid-template-columns: 1fr 1fr; }
+  .cert-footer { grid-template-columns: 1fr; }
+  .topbar { padding: 0 14px; gap: 10px; }
+  .brand b { font-size: 13px; }
+  .brand span { font-size: 9.5px; }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  :root {
+    --top-h: 56px;
+    --bot-h: 72px;
+  }
+
+  .topbar { padding: 0 10px; gap: 6px; }
+  .logo-chip { width: 38px; height: 38px; }
+  .logo-chip svg { width: 26px; height: 26px; }
+  .brand { display: none; }
+  .modlabel { display: none; }
+  .counter { font-size: 11.5px; min-width: 56px; }
+
+  /* Hide secondary icons on mobile */
+  #btnBookmark,
+  #btnGlossary,
+  #btnBookmarks,
+  #btnSearch { display: none; }
+
+  .iconbtn { width: 36px; height: 36px; border-radius: 10px; }
+  .iconbtn svg { width: 16px; height: 16px; }
+
+  .navbtn { padding: 11px 16px; font-size: 12.5px; gap: 6px; }
+  .navbtn .label-full { display: none; }
+
+  .slide { padding: 22px 14px 50px; }
+
+  .cards { grid-template-columns: 1fr; gap: 10px; }
+  ul.checks.cols,
+  .rules { grid-template-columns: 1fr; }
+
+  .flow .step { font-size: 12px; padding: 10px 12px; }
+
+  .bigquote { padding: 20px; font-size: clamp(15px, 4vw, 20px); }
+
+  .stat .num { font-size: clamp(24px, 6vw, 36px); }
+
+  .rm-cell { height: 38px; font-size: 10px; }
+  .rm-row { grid-template-columns: 36px repeat(5, 1fr); }
+  .rm-axis-x { grid-template-columns: 36px repeat(5, 1fr); }
+
+  .menu-grid { grid-template-columns: 1fr; }
+
+  .cert { padding: 22px; }
+  .cert-name { font-size: 28px; }
+  .cert-details { grid-template-columns: 1fr; gap: 10px; }
+
+  .progress-ring { width: 80px; height: 80px; }
+
+  .panelbox { padding: 14px; }
+}
+
+/* Very small */
+@media (max-width: 380px) {
+  .cover h1 { font-size: 26px; }
+  .cover .logo-big { width: 90px; height: 90px; border-radius: 22px; }
+  .cover .logo-big svg { width: 64px; height: 64px; }
+  .badges { gap: 6px; }
+  .badge { font-size: 10px; padding: 6px 10px; }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .cover { min-height: auto; padding: 12px; }
+  .cover .logo-big { width: 72px; height: 72px; margin-bottom: 10px; }
+  .cover h1 { font-size: 22px; }
+}
+
+/* High DPI / retina */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body { -webkit-font-smoothing: subpixel-antialiased; }
+}

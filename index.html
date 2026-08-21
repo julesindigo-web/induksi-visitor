@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#070d1a" />
+  <meta name="description" content="Program Induksi K3L PT. Sifang Mining Indonesia — Pertambangan Nikel Open Pit. Materi interaktif, kuis, tanda tangan digital, dan sertifikat." />
+  <meta name="author" content="PT. Sifang Mining Indonesia — HSE Department" />
+
+  <title>Induksi K3L — PT. Sifang Mining Indonesia | Nikel Open Pit</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/manrope@latest/400.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/manrope@latest/600.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/manrope@latest/800.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/space-grotesk@latest/500.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/space-grotesk@latest/700.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/jetbrains-mono@latest/500.css" />
+
+  <!-- CSS (order matters) -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/slides.css" />
+  <link rel="stylesheet" href="css/effects.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/print.css" />
+</head>
+<body>
+
+  <!-- Logo Symbol -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="logoSMI" viewBox="0 0 120 120">
+      <path d="M60 7 L106 33 V87 L60 113 L14 87 V33 Z" fill="none" stroke="#2b3990" stroke-width="13" stroke-linejoin="round" stroke-linecap="round" pathLength="100" stroke-dasharray="41 5 41 5 8 0"/>
+      <path d="M77 36 H46 a8 8 0 0 0 -8 8 v6 a8 8 0 0 0 8 8 h28 a8 8 0 0 1 8 8 v6 a8 8 0 0 1 -8 8 H44" fill="none" stroke="#2b3990" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <!-- Particles layer -->
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="logo-chip"><svg><use href="#logoSMI"/></svg></div>
+    <div class="brand">
+      <b>PT. SIFANG MINING INDONESIA</b>
+      <span>Program Induksi K3L • Nikel Open Pit</span>
+    </div>
+    <div class="top-right">
+      <span class="modlabel" id="modLabel">PEMBUKA</span>
+      <span class="counter" id="counter">01 / 50</span>
+
+      <button class="iconbtn" id="btnBookmark" aria-label="Bookmark slide ini" title="Bookmark (B)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v18l-6-4-6 4z"/></svg>
+      </button>
+
+      <button class="iconbtn" id="btnSearch" aria-label="Cari" title="Cari materi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg>
+      </button>
+
+      <button class="iconbtn" id="btnGlossary" aria-label="Glosarium" title="Glosarium K3L">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H3z"/><path d="M21 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>
+      </button>
+
+      <button class="iconbtn" id="btnAudio" aria-label="Audio narasi" title="Audio narasi (A)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10v4h4l5 4V6L7 10z"/><path d="M16 8a5 5 0 0 1 0 8"/></svg>
+      </button>
+
+      <button class="iconbtn" id="btnTheme" aria-label="Tema" title="Tema terang/gelap (T)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>
+      </button>
+
+      <button class="iconbtn" id="btnHelp" aria-label="Panduan" title="Panduan (?)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4.5 1.5c-1 .8-2 1.2-2 2.5M12 17v.01"/></svg>
+      </button>
+
+      <button class="iconbtn" id="btnBookmarks" aria-label="Daftar bookmark" title="Lihat bookmark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v18l-6-4-6 4z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+      </button>
+
+      <button class="iconbtn" id="btnMenu" aria-label="Daftar slide" title="Daftar materi (M)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <button class="iconbtn" id="btnFull" aria-label="Layar penuh" title="Layar penuh (F)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="progress"><i id="bar"></i></div>
+
+  <!-- MENU -->
+  <div class="menu" id="menu">
+    <button class="iconbtn" id="btnClose" aria-label="Tutup">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <h3 style="max-width:var(--menu-max); margin:6px auto 16px; color:var(--amber); letter-spacing:.1em;">DAFTAR MATERI INDUKSI</h3>
+    <div id="menuGrid"></div>
+  </div>
+
+  <!-- STAGE -->
+  <main class="stage" id="stage">
+    <!-- Slides injected by JS -->
+  </main>
+
+  <!-- BOTBAR -->
+  <footer class="botbar">
+    <button class="navbtn" id="btnPrev" aria-label="Sebelumnya">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg>
+      <span class="label-full">Sebelumnya</span>
+    </button>
+    <button class="navbtn primary" id="btnNext" aria-label="Lanjut">
+      <span class="label-full">Lanjut</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+  </footer>
+
+  <!-- SCRIPTS (order matters: data first, then features, then app) -->
+  <script src="js/icons.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/slides-data.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/glossary.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/bookmarks.js"></script>
+  <script src="js/help.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/signature.js"></script>
+  <script src="js/certificate.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
