@@ -14,13 +14,15 @@ const Signature = (() => {
     bind();
     document.getElementById('sigClear').addEventListener('click', clear);
     document.getElementById('sigSave').addEventListener('click', save);
-    document.querySelectorAll('#sig-name,#sig-nik,#sig-pos,#sig-dept').forEach(inp => {
+    document.querySelectorAll('#sig-name,#sig-nik,#sig-pos,#sig-dept,#sig-host,#sig-date').forEach(inp => {
       inp.addEventListener('input', () => {
         const u = State.get('user') || {};
         if (inp.id === 'sig-name') u.name = inp.value;
         if (inp.id === 'sig-nik') u.nik = inp.value;
         if (inp.id === 'sig-pos') u.position = inp.value;
         if (inp.id === 'sig-dept') u.department = inp.value;
+        if (inp.id === 'sig-host') u.host = inp.value;
+        if (inp.id === 'sig-date') { u.visitDate = inp.value; u.date = inp.value; }
         State.set('user', u);
       });
     });

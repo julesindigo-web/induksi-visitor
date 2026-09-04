@@ -2,15 +2,42 @@
    SLIDES — Special slide variants
    ============================================================ */
 
-/* ---------- COVER / HERO ---------- */
+/* ---------- COVER / HERO — VISITOR PREMIUM ---------- */
 .slide.cover::before {
   content: "";
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 30%, rgba(45, 212, 191, 0.10), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(251, 191, 36, 0.10), transparent 40%);
+    radial-gradient(circle at 20% 28%, rgba(45, 212, 191, 0.11), transparent 42%),
+    radial-gradient(circle at 82% 72%, rgba(251, 191, 36, 0.13), transparent 44%),
+    radial-gradient(circle at 50% 0%, rgba(251,191,36,0.07), transparent 55%);
   pointer-events: none;
+}
+.slide.cover::after {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: 14px;
+  transform: translateX(-50%);
+  width: 120px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(251,191,36,0.45), transparent);
+  opacity: 0.9;
+  pointer-events: none;
+}
+/* Visitor ribbon — diagonal premium badge on cover */
+.visitor-ribbon {
+  position: absolute;
+  top: 22px; right: -36px;
+  background: var(--grad-visitor);
+  color: #1c0f00;
+  font-family: var(--font-display);
+  font-size: 10px; font-weight: 800;
+  letter-spacing: 0.16em;
+  padding: 8px 48px;
+  transform: rotate(32deg);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35), var(--visitor-ring);
+  border: 1px solid rgba(139,69,19,0.18);
+  z-index: 2;
+  text-transform: uppercase;
 }
 
 /* ---------- STATS GRID (Animated counters) ---------- */
@@ -29,10 +56,14 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: transform var(--dur-mid) var(--ease-out);
+  transition: transform var(--dur-mid) var(--ease-out), border-color var(--dur-mid) var(--ease-out), box-shadow var(--dur-mid) var(--ease-out);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset;
 }
-
-.stat:hover { transform: translateY(-4px); }
+.stat:hover { transform: translateY(-5px); border-color: var(--line-strong); box-shadow: var(--shadow-md); }
+.stat.visitor {
+  border-color: var(--amber-line);
+  background: var(--grad-visitor-soft);
+}
 
 .stat::after {
   content: "";
@@ -643,36 +674,70 @@
 .toast.warn { border-color: var(--amber-line); }
 .toast.bad { border-color: var(--red-line); }
 
-/* ---------- CERTIFICATE ---------- */
+/* ---------- CERTIFICATE — VISITOR PREMIUM ---------- */
 .cert {
-  background: linear-gradient(135deg, #f7f5ef 0%, #fefcf7 100%);
-  border: 2px solid var(--amber);
-  border-radius: 14px;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(251,191,36,0.12), transparent 38%),
+    linear-gradient(135deg, #f7f5ef 0%, #fefcf7 100%);
+  border: 1.5px solid transparent;
+  border-radius: 16px;
   padding: 36px;
   max-width: 880px;
   margin: 22px auto;
   color: #1e293b;
   position: relative;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 0 0 1px rgba(251,191,36,0.22);
   overflow: hidden;
+  background-clip: padding-box;
+}
+.cert::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1.5px;
+  background: var(--grad-visitor-border);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.95;
+}
+.cert.visitor::before,
+.cert#certPrint::before {
+  content: "VISITOR";
+  position: absolute;
+  right: -14px; top: 44px;
+  font-family: var(--font-display);
+  font-size: 84px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: rgba(251,191,36,0.07);
+  transform: rotate(14deg);
+  pointer-events: none;
+  user-select: none;
 }
 
 .cert::before {
   content: "";
   position: absolute;
-  inset: 8px;
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  border-radius: 8px;
+  inset: 10px;
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  border-radius: 12px;
   pointer-events: none;
+  z-index: 0;
 }
 
 .cert-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid var(--amber);
+  border-bottom: 1.5px solid transparent;
+  border-image: var(--grad-visitor-border) 1;
   padding-bottom: 18px;
   margin-bottom: 22px;
+  position: relative;
+  z-index: 1;
 }
 
 .cert-header .left {

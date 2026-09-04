@@ -48,8 +48,8 @@ const Certificate = (() => {
 
     const certId = State.get('certId') || generateCertId(u);
     State.set('certId', certId);
-    const date = u.date || new Date().toISOString().slice(0, 10);
-    const expiry = addMonths(date, 12);
+    const date = u.date || u.visitDate || new Date().toISOString().slice(0, 10);
+    const expiry = addDays(date, 7);
 
     const wasCertified = State.get('certified');
     if (!wasCertified) {
@@ -59,58 +59,60 @@ const Certificate = (() => {
 
     c.innerHTML = `
       <div class="inner">
-        <div class="kicker">Penutup</div>
-        <h2>Sertifikat <em>Induksi K3L</em></h2>
-        <p class="lead">Selamat! Anda telah lulus program induksi K3L. Sertifikat ini sah sebagai bukti kompetensi awal masuk site.</p>
+        <div class="kicker">Penutup · VISITOR PASS</div>
+        <h2>Visitor Pass <em>K3L</em> — PT Sifang Mining Indonesia</h2>
+        <p class="lead">Selamat! Anda telah lulus <b>Induksi Visitor</b>. Pass ini wajib dibawa selama kunjungan dan hanya berlaku untuk akses didampingi (escorted).</p>
 
-        <div class="cert" id="certPrint">
+        <div class="cert visitor" id="certPrint" style="border-top:4px solid var(--amber)">
           <div class="cert-header">
             <div class="left">
               <div class="logo-mark">${Icons.get('shield', { size: 32, stroke: '#2b3990', sw: 1.5 })}</div>
-              <h3>PT. Sifang Mining Indonesia<small>Occupational Safety, Health & Environment Induction Program</small></h3>
+              <h3>PT. Sifang Mining Indonesia<small>VISITOR SAFETY INDUCTION PASS · Nikel Open Pit</small></h3>
             </div>
             <div class="right">
-              <b style="color:#1e293b">No. Sertifikat</b><br/>
-              ${certId}
+              <b style="color:#1e293b">No. Visitor Pass</b><br/>
+              ${certId}<br/><span style="font-size:10px; color:var(--amber); letter-spacing:.08em">VISITOR — ESCORTED ACCESS ONLY</span>
             </div>
           </div>
           <div class="cert-body">
-            <div class="cert-sub">Sertifikat Kelulusan</div>
-            <div class="cert-title">Program Induksi K3L</div>
+            <div class="cert-sub">Visitor Pass — Safety Induction</div>
+            <div class="cert-title">Induksi Keselamatan Visitor</div>
             <p class="cert-statement">Dengan ini menyatakan bahwa:</p>
-            <div class="cert-name">${escapeHtml(u.name || '— Nama Peserta —')}</div>
-            <p class="cert-id">NIK: ${escapeHtml(u.nik || '—')} · ${escapeHtml(u.position || '—')} · ${escapeHtml(u.department || '—')}</p>
+            <div class="cert-name">${escapeHtml(u.name || '— Nama Visitor —')}</div>
+            <p class="cert-id">ID: ${escapeHtml(u.nik || '—')} · Instansi: ${escapeHtml(u.position || '—')} · Keperluan: ${escapeHtml(u.department || '—')}${u.host ? ' · Pendamping: ' + escapeHtml(u.host) : ''}</p>
 
             <p class="cert-statement" style="margin-top:14px">
-              telah menyelesaikan dan lulus Program Induksi Keselamatan, Kesehatan Kerja, dan Lingkungan (K3L)
-              untuk operasional pertambangan nikel open pit, dengan skor post-test:
-              <b style="color:var(--brand-indigo)">${post.score}%</b>
+              telah menyelesaikan dan lulus Program Induksi Visitor K3L (ringkas, fokus visitor) dengan skor:
+              <b style="color:var(--brand-indigo)">${post.score}%</b>. Berlaku <b>terbatas sebagai tamu didampingi</b>, bukan sebagai pekerja.
             </p>
 
             <div class="cert-details">
               <div class="cert-detail"><div class="lbl">Tanggal Terbit</div><div class="val">${formatDate(date)}</div></div>
-              <div class="cert-detail"><div class="lbl">Berlaku Sampai</div><div class="val">${formatDate(expiry)}</div></div>
-              <div class="cert-detail"><div class="lbl">Status</div><div class="val">AKTIF · ZERO HARM</div></div>
+              <div class="cert-detail"><div class="lbl">Berlaku Sampai (7 hari)</div><div class="val">${formatDate(expiry)}</div></div>
+              <div class="cert-detail"><div class="lbl">Status</div><div class="val">VISITOR · ESCORTED · ZERO HARM</div></div>
             </div>
+            <p style="text-align:center; margin-top:10px; font-size:11px; color:var(--muted); line-height:1.5">
+              ⚠️ <b>Visitor dilarang:</b> masuk pit / plant / workshop tanpa escort · mengemudi sendiri di haul road · mengoperasikan alat · foto/drone tanpa izin · merokok di luar smoking area
+            </p>
           </div>
           <div class="cert-footer">
             <div class="cert-sig">
               <div class="line">${u.name || ''}</div>
-              <small>Peserta Induksi</small>
+              <small>Visitor</small>
             </div>
             <div class="cert-sig">
               <div class="line">HSE Department</div>
-              <small>Disahkan oleh</small>
+              <small>Disahkan oleh · Host: ${escapeHtml(u.host || '—')}</small>
             </div>
           </div>
         </div>
 
         <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:14px">
-          <button class="navbtn primary" id="certDownload">⬇ Unduh / Cetak Sertifikat</button>
+          <button class="navbtn primary" id="certDownload">⬇ Unduh / Cetak Visitor Pass</button>
           <button class="navbtn" id="certShare">📤 Bagikan</button>
         </div>
 
-        <div class="footnote" style="margin-top:14px">Sertifikat ini wajib diperlihatkan saat memasuki site. Masa berlaku 12 bulan — penyegaran wajib setelahnya.</div>
+        <div class="footnote" style="margin-top:14px">Visitor Pass <b>bukan sertifikat pekerja</b>. Berlaku <b>maks. 7 hari</b> & wajib didampingi. Untuk kunjungan berikutnya wajib induksi ulang. Dilarang mengoperasikan alat berat / masuk area terlarang.</div>
       </div>
     `;
 
@@ -127,7 +129,13 @@ const Certificate = (() => {
     const yr = new Date().getFullYear();
     const r = (u.nik || '').replace(/\D/g, '').slice(-4) || '0000';
     const n = Math.floor(Math.random() * 9999).toString().padStart(4, '0');
-    return `SMI-K3L-${yr}-${r}-${n}`;
+    return `SMI-VIS-${yr}-${r}-${n}`;
+  }
+
+  function addDays(dateStr, days) {
+    const d = new Date(dateStr);
+    d.setDate(d.getDate() + days);
+    return d.toISOString().slice(0, 10);
   }
 
   function addMonths(dateStr, m) {
@@ -153,7 +161,7 @@ const Certificate = (() => {
 
   async function share() {
     const u = State.get('user') || {};
-    const text = `Saya ${u.name || ''} (${u.nik || ''}) telah lulus Program Induksi K3L PT. Sifang Mining Indonesia! Skor post-test: ${State.get('posttest').score}%. #ZeroHarm #SafetyFirst`;
+    const text = `Saya ${u.name || ''} (${u.nik || ''}) telah lulus Induksi Visitor PT. Sifang Mining Indonesia! Skor: ${State.get('posttest').score}% · Visitor Pass 7 hari · #ZeroHarm #VisitorSafety`;
     if (navigator.share) {
       try {
         await navigator.share({ title: 'Sertifikat Induksi K3L', text });

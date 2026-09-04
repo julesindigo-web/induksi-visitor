@@ -72,11 +72,17 @@
   --grad-deep: linear-gradient(180deg, var(--bg-0), var(--bg-1));
   --grad-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
   --grad-quote: linear-gradient(135deg, rgba(251, 191, 36, 0.14), rgba(45, 212, 191, 0.08));
+  --grad-visitor: linear-gradient(135deg, #f59e0b 0%, #fbbf24 55%, #fff7ed 100%);
+  --grad-visitor-soft: linear-gradient(135deg, rgba(251,191,36,0.18), rgba(251,146,60,0.12));
+  --grad-visitor-border: linear-gradient(135deg, #f59e0b, #fbbf24, #fde68a);
 
   /* Hazard Stripes */
   --hazard-stripes: repeating-linear-gradient(-45deg,
     var(--amber-2) 0 12px,
     rgba(255, 255, 255, 0.06) 12px 24px);
+  --hazard-visitor: repeating-linear-gradient(-45deg,
+    #f59e0b 0 14px,
+    #1c1917 14px 28px);
 
   /* ---------- TYPOGRAPHY ---------- */
   --font-display: "Space Grotesk", "Manrope", system-ui, sans-serif;
@@ -136,6 +142,10 @@
   --dur-fast: 180ms;
   --dur-mid: 320ms;
   --dur-slow: 520ms;
+
+  /* Visitor Accent Enhancers */
+  --visitor-ring: 0 0 0 1px rgba(251,191,36,0.35), 0 8px 28px rgba(251,191,36,0.22), 0 0 0 4px rgba(251,191,36,0.08);
+  --visitor-text-glow: 0 0 18px rgba(251,191,36,0.35);
 
   /* Z-INDEX SCALE */
   --z-base: 1;

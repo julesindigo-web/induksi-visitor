@@ -27,8 +27,10 @@ const State = (() => {
     user: {
       name: '',
       nik: '',
-      position: '',
-      department: '',
+      position: '',      // untuk visitor: instansi / perusahaan asal
+      department: '',    // untuk visitor: keperluan kunjungan
+      host: '',          // pendamping / sponsor site
+      visitDate: '',
       site: 'Site Utama — Nikel Open Pit',
       date: '',
     },

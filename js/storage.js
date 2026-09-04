@@ -3,7 +3,7 @@
    ============================================================ */
 
 const Storage = (() => {
-  const KEY = 'k3l_smi_induction_v1';
+  const KEY = 'k3l_smi_visitor_v1';
   let memFallback = {};
 
   const hasLS = (() => {

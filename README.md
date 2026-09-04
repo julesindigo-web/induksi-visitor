@@ -1,249 +1,176 @@
-# Induksi K3L — PT. Sifang Mining Indonesia
+# Induksi Visitor K3L — PT. Sifang Mining Indonesia (VISITOR ONLY)
 
-> **Program Induksi Keselamatan, Kesehatan Kerja, dan Lingkungan (K3L)**
-> Pertambangan Nikel Open Pit • Edisi Interaktif Premium
+> **Induksi Keselamatan Khusus TAMU / VISITOR (Escorted Access Only)**
+> Pertambangan Nikel Open Pit • Edisi Visitor Ringkas
 
-Platform pembelajaran interaktif berbasis web untuk inducti HSE pekerja baru,
-kontraktor, dan tamu di area operasional pertambangan nikel open pit PT. Sifang
-Mining Indonesia.
+Versi **fork** dari repo `17. INDUKSI` (50 slide general) yang **difokuskan 100% untuk VISITOR** — bukan untuk karyawan baru, operator, atau driver.
+Durasi **15-20 menit**, **±24 slide**, **Visitor Pass 7 hari** (bukan sertifikat pekerja 12 bulan).
 
 ![Stack](https://img.shields.io/badge/Stack-HTML%20%2F%20CSS%20%2F%20JS-2b3990)
-![Slides](https://img.shields.io/badge/Slides-50-fbbf24)
-![Quiz](https://img.shields.io/badge/Quiz-2dd4bf)
-![Certificate](https://img.shields.io/badge/Certificate-Auto%20Generated-fb923c)
+![Slides](https://img.shields.io/badge/Slides-24%20Visitor-fbbf24)
+![Quiz](https://img.shields.io/badge/Quiz-Visitor%205%2B16-2dd4bf)
+![Pass](https://img.shields.io/badge/Visitor%20Pass-7%20Hari-fb923c)
 
 ---
 
-## � Fitur Utama
+## 🎯 Perbedaan vs Induksi General (50 slide)
 
-### 🎓 Konten & Pembelajaran
-- **50 slide** materi induksi terstruktur dalam 11 modul
-- **Animasi transisi** slide dengan motion premium
-- **Animated SVG mining scene** sebagai cover backdrop
-- **Particle effects** (debu, percikan, ambient glow)
-- **Confetti celebration** saat lulus / sertifikat terbit
-- **Counter animasi** untuk statistik kunci
-
-### 🧠 Interaktif (Non-Static)
-- ✅ **Pre-Test** (5 soal) — baseline check
-- ✅ **Risk Matrix 5×5** interaktif (klik sel untuk contoh bahaya)
-- ✅ **APD Selector** — pilih APD sesuai tugas, sistem validasi
-- ✅ **Sirene Demo** — bunyikan pola alarm darurat via TTS
-- ✅ **Post-Test** 2 bagian: **LSR (wajib 100%)** + Pengetahuan Umum (≥80%)
-- ✅ **Digital Signature Pad** (canvas-based)
-- ✅ **Studi Kasus** industri nikel
-
-### 💼 Profesional
-- 🖋 **Tanda tangan digital** di canvas
-- 📜 **Sertifikat otomatis** dengan nomor unik, masa berlaku 12 bulan
-- 📊 **Progress tracking** otomatis (tersimpan di browser)
-- � **Bookmark** slide untuk review ulang
-- 📝 **Notes** per slide (planned)
-- 🔍 **Full-text search** seluruh materi
-- 📖 **Glosarium K3L** 80+ istilah dengan pencarian
-
-### 🎨 Visual & UX
-- 🌗 **Dark/Light theme** toggle (data-theme)
-- 🔤 **Premium typography** (Space Grotesk + Manrope + JetBrains Mono)
-- 📱 **Responsive** (mobile-first; swipe gesture)
-- 🖨 **Print-ready** (handout + sertifikat A4)
-- 🔊 **Audio narasi** Bahasa Indonesia (Web Speech API)
-- ⌨ **Keyboard shortcuts** lengkap
+| Aspek | General (Pekerja) | **Visitor Edition** |
+|-------|-------------------|---------------------|
+| **Target** | Karyawan baru, kontraktor, magang, operator, driver | **Hanya TAMU / VISITOR escorted** |
+| **Jumlah slide** | 50 | **24 (cover s/d terima kasih)** |
+| **Durasi** | 45-60 menit | **15-20 menit** |
+| **Sertifikat** | SMI-K3L, 12 bulan | **SMI-VIS-*, 7 hari, ESCORTED ONLY** |
+| **Storage key** | `k3l_smi_induction_v1` | **`k3l_smi_visitor_v1` (terpisah)** |
+| **Materi teknis berat** | LOTO 7 langkah, listrik, scaffolding, confined gas test, hot work, lifting, galian, HPAL/TSF detail, SIMPER/KIMPER deep | **Dihilangkan / diringkas jadi awareness** (“jangan dekati, lapor escort”) |
+| **Fokus visitor** | — | Escort wajib, zona hijau/kuning/merah, APD minimal 5, traffic sebagai penumpang/pejalan kaki, blind spot, wet laterit, darurat ikut escort |
+| **Quiz** | LSR 5 (100%) + 20 umum | **LSR Visitor 5 (100%) + 11 umum (80%) — konteks tamu** |
+| **TTD** | Nama/NIK/Jabatan/Dept | **+ Host/Escort + Tgl Kunjungan (wajib)** |
+| **Pass note** | “Penyegaran 12 bulan” | **“Bukan pekerja. Dilarang operasikan alat / masuk area merah”** |
 
 ---
 
-## 📁 Struktur Project
+## 📚 Daftar Slide Visitor (24)
+
+| # | Modul | Judul | Fokus Visitor |
+|---|-------|-------|---------------|
+| 1 | VISITOR | Cover Visitor | Welcome escorted, beda pekerja vs tamu |
+| 2 | VISITOR | Agenda Ringkas | 8 blok visitor vs 11 pekerja |
+| 3 | VISITOR | Tata Tertib Tamu | Escort, no HP jalan, no foto tanpa izin |
+| 4 | VISITOR | Tujuan & Batasan | Siapa visitor, 7-day pass, tanpa pass = tanpa akses |
+| 5 | VISITOR | K3 Kilat & Lambang | Definisi 1 kalimat + lambang |
+| 6 | VISITOR | Mengapa Penting | Stats visitor (88% tindakan, 3 detik, 7 hari) |
+| 7 | EVAL | **Pre-Test Visitor (5)** | Baseline awareness |
+| 8 | VISITOR | Profil Site — Kacamata Visitor | Open pit laterit, yang akan dilihat (jauh, escorted) |
+| 9 | VISITOR | Kebijakan Kilat | 4 poin ringkas + nilai tamu |
+| 10 | VISITOR | **10 Aturan Visitor** | Escort 100%, APD, no driving haul, no foto, barricade |
+| 11 | VISITOR | Zona Akses | HIJAU/KUNING/MERAH |
+| 12 | VISITOR | Syarat Masuk Gate | Checklist 5 + kendaraan visitor |
+| 13 | VISITOR | Rambu & Alarm | Merah/kuning/biru/hijau + 3× panjang = darurat |
+| 14 | VISITOR | APD Minimal 5+1 | Helm, glasses, boots, vest, earplug + life jacket |
+| 15 | VISITOR | Kesehatan Tamu | Fit to Visit, heat stroke, debu, nikel itch |
+| 16 | VISITOR | Traffic Tamu | Penumpang/pejalan kaki, blind spot, wet laterit |
+| 17 | VISITOR | Bahaya Khas — Awareness | Longsor, HE exclusion, plant, jetty — kenali & menjauh |
+| 18 | VISITOR | Tanggap Darurat Tamu | Teriak EMERGENCY 3×, ikut escort ke muster |
+| 19 | VISITOR | **Demo Sirene** | TTS 4 pola |
+| 20 | VISITOR | P3K & Lapor | Lapor escort, jangan pindah korban |
+| 21 | VISITOR | Etika & Keamanan | BRIMOB, no judi, sampah PLASTIC/ORGANIC, whistleblower |
+| 22 | VISITOR | **Studi Kasus Visitor (3)** | Crossing haul, lepas vest, heat stroke tamu |
+| 23 | EVAL | **Post-Test Visitor (16)** | 5 kritis 100% + 11 umum 80% |
+| 24 | EVAL | TTD Komitmen Visitor | + Host/Escort |
+| 25 | EVAL | **Visitor Pass** | SMI-VIS-*, 7 hari, ESCORTED |
+| 26 | PENUTUP | Terima Kasih Visitor | Checklist keluar |
+
+> Catatan: counter otomatis menampilkan `01 / 26` karena implementasi 26 objek (termasuk pre/post). Versi pekerja menampilkan `50`.
+
+---
+
+## 🗂️ Struktur Folder (Visitor Clone)
 
 ```
-18. INDUKSI/
-├── index.html               ← Entry point
-├── README.md                ← Anda di sini
-│
-├── assets/
-│   ├── logo.svg             ← Logo symbol (icon only)
-│   ├── logo-full.png        ← Logo PT. SMI lengkap dengan nama perusahaan
-│   └── favicon.svg          ← Browser tab icon
-│
-├── css/
-│   ├── tokens.css           ← Design system (warna, tipografi, spacing)
-│   ├── base.css             ← Reset & base typography
-│   ├── layout.css           ← App shell, topbar, botbar, stage
-│   ├── components.css       ← Cards, buttons, panels, badges
-│   ├── slides.css           ← Slide variants (cover, stats, matrix, APD, dll)
-│   ├── effects.css          ← Particles, glassmorphism, shimmer
-│   ├── responsive.css       ← Media queries
-│   └── print.css            ← Print + certificate stylesheet
-│
+17. INDUKSI-VISITOR/  ← clone dari 17. INDUKSI
+├── index.html               ← title/meta visitor, badge ESCORTED
+├── README.md                ← Anda di sini (visitor)
+├── css/                     ← sama (tokens, slides, print)
 ├── js/
-│   ├── icons.js             ← 85+ SVG icon (custom mining/HSE themed)
-│   ├── storage.js           ← LocalStorage wrapper
-│   ├── state.js             ← Centralized app state
-│   ├── effects.js           ← Particles, confetti, counters, toast
-│   ├── progress.js          ← Progress tracking
-│   ├── theme.js             ← Dark/light mode
-│   ├── audio.js             ← TTS narration + sirene demo
-│   ├── slides-data.js       ← 50 slide definitions (data-driven)
-│   ├── renderer.js          ← Dynamic DOM rendering
-│   ├── navigation.js        ← Slide navigation (keyboard + touch)
-│   ├── menu.js              ← TOC drawer
-│   ├── glossary.js          ← Searchable glossary
-│   ├── search.js            ← Full-text search
-│   ├── bookmarks.js         ← Bookmark manager
-│   ├── help.js              ← Keyboard shortcuts help
-│   ├── quiz.js              ← Quiz engine (pretest, posttest, matrix, APD)
-│   ├── signature.js         ← Canvas signature pad
-│   ├── certificate.js       ← Auto-generate certificate
-│   └── app.js               ← Bootstrap & orchestration
-│
-└── data/
-    ├── quiz.json            ← Bank soal pretest + posttest
-    └── glossary.json        ← 80+ HSE terms
+│   ├── slides-data.js       ← **REWRITE TOTAL visitor (26 entry)**
+│   ├── state.js             ← + host, visitDate
+│   ├── storage.js           ← key baru k3l_smi_visitor_v1
+│   ├── certificate.js       ← SMI-VIS-*, addDays(7), wording visitor
+│   ├── signature.js         ← + host & date
+│   └── ... (sisa sama: icons, app, navigation, quiz, etc)
+├── data/
+│   ├── quiz.json            ← **REWRITE visitor (5 + 5+11)**
+│   └── glossary.json        ← **FILTER visitor (40 istilah tamu)**
+└── assets/                  ← logo, favicon
 ```
 
 ---
 
-## 🚀 Cara Menjalankan
+## 🚀 Cara Menjalankan Visitor Edition
 
-### Cara 1 — Langsung Buka di Browser
+### Lokal (recommended — fetch butuh http)
 ```bash
-# Buka file index.html dengan browser modern (Chrome/Edge/Firefox)
-# Beberapa fitur (fetch, audio) butuh protokol http:// atau https://
-```
-
-### Cara 2 — Local HTTP Server (Recommended)
-```bash
-# Python
+cd "17. INDUKSI-VISITOR"
 python -m http.server 8000
-
-# Node.js (npx)
-npx http-server -p 8000
-
-# PHP
-php -S localhost:8000
-
-# Lalu buka: http://localhost:8000
+# atau npx http-server -p 8000
+# buka http://localhost:8000
 ```
 
-### Cara 3 — Live Deploy
-Upload folder ini ke static host: **Netlify**, **Vercel**, **GitHub Pages**, **Cloudflare Pages**, atau shared hosting biasa.
+### Deploy Vercel / Netlify / GitHub Pages
+Upload folder `17. INDUKSI-VISITOR` apa adanya — static, no build step. `vercel.json` sudah ada (copy dari induk).
 
 ---
 
-## ⌨ Pintasan Keyboard
-
-| Tombol | Aksi |
-|--------|------|
-| `→` / `PageDown` / `Space` | Slide berikutnya |
-| `←` / `PageUp` | Slide sebelumnya |
-| `Home` / `End` | Slide pertama / terakhir |
-| `M` | Buka / tutup menu |
-| `F` | Toggle fullscreen |
-| `T` | Toggle tema (dark / light) |
-| `A` | Toggle audio narasi |
-| `?` | Buka panduan pintasan |
-| Swipe kiri / kanan | Navigasi di mobile |
-
----
-
-## 📚 Daftar Modul
-
-| # | Modul | Topik Utama |
-|---|-------|-------------|
-| 1 | PEMBUKA | Cover, Agenda, Tujuan, Statistik |
-| 2 | PROFIL | Profil, Hukum, Kebijakan, LSR, SWA |
-| 3 | ATURAN | Hak-Kewajiban, Aturan Site, Area, Rambu, Radio |
-| 4 | RISIKO | Manajemen Risiko, Risk Matrix, Permit, SIMOPS/MOC |
-| 5 | APD | APD Wajib, APD Spesifik, **APD Selector** |
-| 6 | KESEHATAN | Fit to Work, Bahaya Nikel |
-| 7 | AREA | Traffic, Alat Berat, Geoteknik |
-| 8 | KERJA | LOTO, Listrik, Ketinggian, Confined, Hot Work, Lifting, Galian |
-| 9 | FASILITAS | Kimia/B3, Plant, Smelter/HPAL/TSF/Jetty, Fuel, Lingkungan |
-| 10 | DARURAT | Tanggap Darurat, **Sirene Demo**, P3K, Pelaporan |
-| 11 | PENUNJANG | Camp, Keamanan, Etika |
-| 12 | KASUS | Studi Kasus Industri Nikel |
-| 13 | EVAL | **Pre-Test**, **Post-Test**, **TTD Digital**, **Sertifikat** |
-
----
-
-## ✅ Alur Penggunaan
-
-```
-Cover
-  ↓
-Materi (50 slide)
-  ↓
-Pre-Test (baseline)
-  ↓
-Lanjut ke Materi Inti
-  ↓
-...
-  ↓
-Post-Test
-  ├─ LULUS (LSR 100% + Umum ≥80%)
-  │     ↓
-  │   Tanda Tangan Digital
-  │     ↓
-  │   Sertifikat Otomatis (No. SMI-K3L-...)
-  │     ↓
-  │   Unduh / Cetak
-  │
-  └─ BELUM LULUS
-        ↓
-      Pelajari ulang & Remedial
-```
-
----
-
-## 🔒 Penyimpanan Data
-
-Semua progres disimpan **lokal di browser** (localStorage):
+## 🔐 Penyimpanan Data (terpisah dari induksi pekerja)
 
 | Key | Isi |
 |-----|-----|
-| `k3l_smi_induction_v1` | `{ state: { idx, visited, bookmarks, quiz, signature, user, settings, ... } }` |
+| `k3l_smi_visitor_v1` | `{ state: { idx, visited, user{host,visitDate}, quiz, signature, certId, certified } }` |
+| `k3l_smi_induction_v1` | Tetap untuk versi pekerja (tidak bentrok) |
 
-Untuk **reset total**:
-1. Buka DevTools (F12)
-2. Console: `__APP__.State.reset(); location.reload()`
-3. Atau bersihkan localStorage untuk domain ini
-
----
-
-## 🛠 Tech Stack
-
-- **HTML5** semantic markup
-- **CSS3** modern (custom properties, grid, flexbox, animations, backdrop-filter)
-- **Vanilla JavaScript (ES6+)** — tidak ada framework dependency
-- **Web APIs**: localStorage, Canvas, Web Speech API, Fullscreen API
-- **SVG** untuk ilustrasi, ikon, dan animasi (no emoji icons)
+Reset visitor:
+```js
+__APP__.State.reset(); location.reload()
+// atau localStorage.removeItem('k3l_smi_visitor_v1')
+```
 
 ---
 
-## 📋 Browser Support
+## ✅ Alur Visitor
 
-| Browser | Status |
-|---------|--------|
-| Chrome / Edge 90+ | ✅ Full |
-| Firefox 88+ | ✅ Full |
-| Safari 14+ | ✅ Full |
-| Mobile Safari iOS 14+ | ✅ Full |
-| Chrome Android 90+ | ✅ Full |
+```
+Cover Visitor (escorted warning)
+  ↓
+Agenda 8 blok
+  ↓
+Tata Tertib + Tujuan/Batasan
+  ↓
+Pre-Test 5 (baseline)
+  ↓
+Materi inti 14 slide (profil s/d etika) + Demo Sirene
+  ↓
+Studi Kasus Visitor
+  ↓
+Post-Test
+  ├─ LULUS (5 kritis 100% + umum ≥80%)
+  │     ↓
+  │   TTD Visitor (+ host)
+  │     ↓
+  │   Visitor Pass SMI-VIS-* (7 hari)
+  │     ↓
+  │   Cetak / screenshot → tunjukkan di gate
+  │
+  └─ BELUM LULUS → remedial
+```
+
+---
+
+## 🛡️ Prinsip Desain Visitor
+
+1. **Escorted only** — setiap slide mengulang “jangan lepas escort”.
+2. **Awareness, bukan kompetensi operasi** — tamu tidak diajari LOTO/ketinggian/confined; cukup “jangan dekati & lapor”.
+3. **Larangan eksplisit** — 10 aturan visitor, zona merah, foto, HP, rokok.
+4. **Durasi pendek** — 15 menit, bahasa tamu (bukan teknisi).
+5. **Pass terbatas** — 7 hari edukasi bahwa visitor pass ≠ sertifikat kerja.
+
+---
+
+## 🧪 Validasi
+
+- [x] `js/slides-data.js` syntax OK (26 types)
+- [x] `data/quiz.json` valid (pretest 5, lsr 5, umum 11)
+- [x] `data/glossary.json` visitor 40 items
+- [x] Storage key terpisah
+- [x] Certificate SMI-VIS + 7 days
+- [ ] Manual click-through 26 slide di browser (disarankan)
+- [ ] Cetak Visitor Pass A4
 
 ---
 
 ## 📝 Lisensi & Atribusi
 
 © 2026 PT. Sifang Mining Indonesia — HSE Department.
-Materi internal untuk inducti K3L. Tidak untuk distribusi publik.
+Fork visitor untuk tamu escorted. Tidak untuk operator/pekerja — mereka wajib induksi general 50 slide.
 
-Font: **Space Grotesk**, **Manrope**, **JetBrains Mono** (SIL Open Font License via Fontsource CDN).
-
----
-
-## � Dukungan
-
-Pertanyaan atau masalah teknis:
-- HSE Department PT. Sifang Mining Indonesia
-- Email: hse@sifangmining.co.id
-
-> **"Tidak ada target produksi yang sebanding dengan nyawa manusia."**
+> “Tamu terbaik bukan yang paling penting — tapi yang paling patuh pada keselamatan.”

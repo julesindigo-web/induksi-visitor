@@ -13,9 +13,10 @@ body {
   font-size: var(--fs-base);
   line-height: 1.55;
   background:
-    radial-gradient(1200px 600px at 88% -8%, rgba(45, 212, 191, 0.10), transparent 60%),
-    radial-gradient(1000px 540px at -10% 110%, rgba(251, 191, 36, 0.09), transparent 55%),
-    radial-gradient(720px 420px at 50% 120%, rgba(91, 124, 250, 0.08), transparent 60%),
+    radial-gradient(900px 480px at 50% -6%, rgba(251, 191, 36, 0.11), transparent 58%),
+    radial-gradient(1200px 600px at 88% -8%, rgba(45, 212, 191, 0.09), transparent 60%),
+    radial-gradient(1000px 540px at -10% 110%, rgba(251, 191, 36, 0.08), transparent 55%),
+    radial-gradient(720px 420px at 50% 120%, rgba(91, 124, 250, 0.07), transparent 60%),
     var(--grad-deep);
   background-attachment: fixed;
   overflow: hidden;
@@ -74,7 +75,21 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 { font-size: var(--fs-3xl); letter-spacing: -0.015em; }
-h2 { font-size: var(--fs-2xl); }
+h2 {
+  font-size: var(--fs-2xl);
+  position: relative;
+  padding-bottom: 10px;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 56px; height: 2px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--amber), transparent);
+  opacity: 0.95;
+}
+.slide.cover h2::after, .slide:last-child h2::after { display: none; }
 h3 { font-size: var(--fs-md); }
 h4 { font-size: var(--fs-base); }
 
@@ -91,20 +106,23 @@ code, pre, kbd {
   font-size: 0.9em;
 }
 
-/* Selection */
-::selection { background: rgba(251, 191, 36, 0.32); color: var(--text); }
+/* Selection — visitor amber premium */
+::selection { background: rgba(251, 191, 36, 0.36); color: #1c0f00; }
+[data-theme="light"] ::selection { background: rgba(251,191,36,0.28); }
 
-/* Scrollbar */
+/* Scrollbar — premium amber thin */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.25); border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.42); }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, rgba(251,191,36,0.42), rgba(245,158,11,0.32)); border-radius: 99px; border: 1px solid rgba(255,255,255,0.08); }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, rgba(251,191,36,0.58), rgba(245,158,11,0.48)); }
 ::-webkit-scrollbar-track { background: transparent; }
+* { scrollbar-color: rgba(251,191,36,0.42) transparent; scrollbar-width: thin; }
 
-/* Focus ring */
+/* Focus ring — premium visitor glow */
 :focus-visible {
   outline: 2px solid var(--amber);
   outline-offset: 3px;
-  border-radius: 4px;
+  border-radius: 6px;
+  box-shadow: 0 0 0 4px rgba(251,191,36,0.18), 0 0 18px rgba(251,191,36,0.22);
 }
 
 /* Reduced motion */

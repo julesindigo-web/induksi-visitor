@@ -33,3 +33,6 @@ tmp
 temp
 
 .vercel
+
+# Large reference file - excluded (> GitHub 100MB/file limit, ~290MB)
+Induksi Keselamatan (1).pdf

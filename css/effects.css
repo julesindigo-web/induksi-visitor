@@ -27,10 +27,12 @@
   background: var(--amber);
   opacity: 0;
   animation: drift linear infinite;
+  box-shadow: 0 0 6px rgba(251,191,36,0.55);
 }
 
 .particle.t {
   background: var(--teal);
+  box-shadow: 0 0 6px rgba(45,212,191,0.45);
 }
 
 @keyframes drift {

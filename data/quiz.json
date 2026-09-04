@@ -1,230 +1,241 @@
 {
   "pretest": [
     {
-      "q": "Apa yang harus Anda lakukan jika melihat retakan (tension crack) di tepi highwall?",
+      "q": "Sebagai VISITOR, apa aturan paling utama saat berada di site?",
       "opts": [
-        "Lapor ke supervisor setelah shift selesai",
-        "STOP WORK, menjauh, dan lapor dispatcher/geoteknik segera",
-        "Foto untuk dokumentasi, lalu lanjut bekerja",
-        "Pindahkan rambu pengaman untuk akses alat"
+        "Boleh jalan sendiri bila sudah tahu arah",
+        "Selalu didampingi escort/host, jangan terpisah dari rombongan",
+        "Boleh masuk pit untuk foto bila sepi",
+        "Cukup lapor di gate, selanjutnya bebas"
       ],
       "a": 1,
-      "fb": "Tanda bahaya geoteknik adalah situasi darurat. Langkah pertama selalu menjauh, lalu lapor."
+      "fb": "Visitor wajib escorted 100%. Terpisah = STOP & hubungi escort/HSE."
     },
     {
-      "q": "Saat alarm darurat 3× panjang berbunyi, tindakan pertama Anda adalah…",
+      "q": "APD minimal visitor yang wajib dipakai adalah…",
       "opts": [
-        "Menunggu instruksi di tempat kerja",
-        "Lari ke parkiran untuk menyelamatkan kendaraan",
-        "Hentikan pekerjaan, amankan diri, menuju muster point lewat jalur evakuasi",
-        "Menelepon keluarga"
-      ],
-      "a": 2,
-      "fb": "Prosedur darurat standar: Stop → Aman → Muster Point lewat jalur evakuasi."
-    },
-    {
-      "q": "APD mana yang WAJIB dipakai di seluruh area operasional site?",
-      "opts": [
-        "Hanya helm dan rompi",
-        "Helm, kacamata, sepatu safety, rompi, sarung tangan (sesuai tugas)",
-        "Bebas, sesuai selera pekerja",
-        "Hanya saat ada inspektur"
+        "Hanya helm",
+        "Helm, kacamata safety, safety boots, high-vis vest (+ life jacket bila ke jetty)",
+        "Bebas sesuai selera",
+        "Hanya saat ada HSE"
       ],
       "a": 1,
-      "fb": "APD minimum: helm, kacamata, boots, rompi. Sarung tangan sesuai tugas."
+      "fb": "5 minimal: helm, glasses, boots, vest, + life jacket untuk jetty. Tidak boleh kurang."
     },
     {
-      "q": "Batas kecepatan umum light vehicle di haul road yang licin (laterit hujan) adalah…",
+      "q": "Jika hujan deras membuat haul road laterit licin, sebagai tamu Anda harus…",
       "opts": [
-        "Sama seperti kondisi kering",
-        "Diturunkan signifikan dan jaga jarak aman lebih besar",
-        "Tidak ada batas, asal hati-hati",
-        "Naik sedikit karena visibility lebih jelas"
+        "Minta escort tetap lanjut karena jadwal padat",
+        "Ikuti keputusan escort untuk STOP/tunda, jaga jarak aman, jangan paksa lanjut",
+        "Turun dan dorong kendaraan",
+        "Ganti driver visitor yang tidak punya KIMPER"
       ],
       "a": 1,
-      "fb": "Laterit hujan kehilangan traksi drastis. Turunkan kecepatan + perbesar jarak aman atau STOP."
+      "fb": "Laterit hujan = selip. Keputusan STOP escort wajib dipatuhi, visitor punya SWA untuk minta berhenti."
     },
     {
-      "q": "Konsep Stop Work Authority (SWA) berarti…",
+      "q": "Saat sirene 3× panjang (DARURAT) berbunyi, visitor harus…",
       "opts": [
-        "Hanya manajer yang boleh menghentikan pekerjaan",
-        "Setiap orang berhak & wajib menghentikan kerja yang tidak aman, tanpa retaliasi",
-        "Hanya berlaku saat ada audit",
-        "Berhenti kerja = otomatis kena sanksi"
+        "Tetap selfie di viewpoint",
+        "Ikut escort ke muster point via jalur evakuasi, jangan bawa barang",
+        "Lari ke parkiran selamatkan mobil",
+        "Telepon keluarga dulu"
       ],
       "a": 1,
-      "fb": "SWA adalah hak & kewajiban semua level. Perusahaan menjamin tidak ada retaliasi untuk pelapor yang beritikad baik."
+      "fb": "Visitor = ikut escort ke muster, headcount, tunggu 'AMAN' dari warden."
+    },
+    {
+      "q": "Foto/video/drone di site untuk visitor…",
+      "opts": [
+        "Bebas di semua area",
+        "Hanya dengan izin tertulis HSE, dilarang area kritis tanpa izin",
+        "Boleh bila tidak ada rambu larangan",
+        "Boleh upload langsung ke medsos"
+      ],
+      "a": 1,
+      "fb": "Foto kritis (pit/plant/jetty) butuh izin tertulis, jangan sebar tanpa approval."
     }
   ],
   "posttest": {
     "passing": 80,
     "sections": {
       "lsr": {
-        "title": "Life-Saving Rules — Wajib 100% Benar",
+        "title": "Aturan Kritis Visitor — Wajib 100% Benar",
         "critical": true,
         "questions": [
           {
-            "q": "LSR #1: 'Fit for Work' berarti…",
+            "q": "Aturan #1 Visitor: Escort — yang benar…",
             "opts": [
-              "Boleh minum obat tidur keras saat shift malam",
-              "Tidak bekerja dalam pengaruh alkohol, narkoba, atau obat yang menurunkan kesadaran",
-              "Boleh bekerja bila hanya sedikit pengaruh",
-              "Bebas, asalkan tidak ketahuan"
+              "Visitor boleh eksplor sendiri bila sudah induksi",
+              "Visitor dilarang berjalan sendiri, wajib didampingi escort setiap saat",
+              "Escort hanya untuk hari pertama",
+              "Boleh lepas rombongan asal lapor WA"
             ],
             "a": 1
           },
           {
-            "q": "LSR #5: LOTO sebelum maintenance. Prinsip utamanya…",
+            "q": "APD visitor dilepas untuk foto agar 'lebih bagus' — tindakan Anda…",
             "opts": [
-              "Isolasi & kunci seluruh sumber energi, verifikasi nol energi, baru bekerja",
-              "Matikan alat lalu langsung kerja cepat",
-              "Boleh dilepas lock orang lain bila mendesak",
-              "Cukup tag saja tanpa lock"
-            ],
-            "a": 0
-          },
-          {
-            "q": "LSR #6: Kerja di ketinggian. Fall protection wajib pada…",
-            "opts": [
-              "≥ 5 m saja",
-              "≥ 1,8 m dengan anchor tersertifikasi + harness",
-              "Hanya di atas tower",
-              "Tidak wajib bila ada tangga"
+              "Wajar, untuk dokumentasi",
+              "Dilarang — APD wajib tetap terpasang sampai keluar area operasional",
+              "Boleh bila hanya 1 menit",
+              "Boleh bila ada izin escort"
             ],
             "a": 1
           },
           {
-            "q": "LSR #7: Confined space. Masuk tanpa…",
+            "q": "Visitor melihat barricade merah/pita terlarang — harus…",
             "opts": [
-              "Boleh, asal cepat",
-              "Wajib permit, gas test, attendant — dilarang masuk tanpa syarat itu",
-              "Boleh masuk asal ada senior",
-              "Boleh masuk asal membawa senter"
+              "Pindahkan sebentar untuk lewat, kembalikan lagi",
+              "JANGAN LEWAT / jangan pindahkan — tanya escort untuk rute aman",
+              "Lompati barricade",
+              "Foto dulu baru lapor"
             ],
             "a": 1
           },
           {
-            "q": "LSR #8: Jangan bypass pengaman. Tindakan Anda bila melihat interlock dinonaktifkan…",
+            "q": "Sebagai penumpang LV di haul road, kewajiban visitor…",
             "opts": [
-              "Diam saja, bukan urusan saya",
-              "Lapor supervisor / hentikan kerja, jangan melanjutkan",
-              "Foto dan share ke medsos",
-              "Perbaiki sendiri supaya kerja lancar"
+              "Boleh pakai HP saat kendaraan jalan",
+              "Seatbelt wajib, no HP saat jalan, no rokok, no riding di bak",
+              "Boleh duduk di bak belakang bila penuh",
+              "Boleh minta supir ngebut agar cepat sampai"
+            ],
+            "a": 1
+          },
+          {
+            "q": "Visitor melihat retakan di tepi highwall dari viewpoint — harus…",
+            "opts": [
+              "Mendekat untuk foto close-up",
+              "Menjauh & lapor escort/HSE segera, jangan mendekat",
+              "Memindahkan rambu agar alat bisa lewat",
+              "Mengabaikan, bukan urusan tamu"
             ],
             "a": 1
           }
         ]
       },
       "umum": {
-        "title": "Pengetahuan Umum K3L",
+        "title": "Pengetahuan Umum Visitor",
         "passing": 80,
         "questions": [
           {
-            "q": "Hierarki pengendalian risiko yang BENAR (dari atas ke bawah)…",
+            "q": "Masa berlaku Visitor Pass setelah lulus induksi visitor adalah…",
             "opts": [
-              "APD → Administratif → Rekayasa → Substitusi → Eliminasi",
-              "Eliminasi → Substitusi → Rekayasa → Administratif → APD",
-              "Administratif → Eliminasi → Rekayasa → APD → Substitusi",
-              "Rekayasa → Eliminasi → APD → Administratif → Substitusi"
+              "12 bulan seperti pekerja",
+              "7 hari, escorted only — kunjungan berikutnya wajib induksi ulang",
+              "Seumur hidup",
+              "Tidak ada batas"
             ],
             "a": 1,
-            "fb": "Eliminasi bahaya adalah yang paling efektif. APD adalah pertahanan TERAKHIR."
+            "fb": "Visitor ≠ pekerja. Pass visitor 7 hari, bukan 12 bulan."
           },
           {
-            "q": "Saat terjadi tumpahan BBM kecil (~5 liter) di area workshop, tindakan BENAR…",
+            "q": "Zona KUNING untuk visitor artinya…",
             "opts": [
-              "Siram ke drainase agar cepat hilang",
-              "Pasang barricade, gunakan spill kit, lapor supervisor, bersihkan & dokumentasikan",
-              "Biarkan menguap sendiri",
-              "Tutup dengan tanah dan diamkan"
+              "Bebas masuk sendiri",
+              "Hanya boleh dengan escort (haul road sebagai penumpang, plant perimeter, jetty dengan life jacket)",
+              "Dilarang total",
+              "Hanya untuk foto"
             ],
             "a": 1,
-            "fb": "Tumpahan kecil pun wajib dilaporkan. Zero uncontrolled spill."
+            "fb": "KUNING = escorted only. HIJAU = boleh, MERAH = dilarang."
           },
           {
-            "q": "Tanda heat stroke yang membedakannya dari kelelahan biasa…",
+            "q": "Heat stroke pada visitor — tanda darurat yang membedakan dari lelah biasa…",
             "opts": [
-              "Haus",
-              "Kulit panas & kering, kebingungan, penurunan kesadaran — DARURAT MEDIS",
+              "Haus ringan",
+              "Kulit panas & kering, bingung, tidak berkeringat — DARURAT, lapor escort & ke teduh/klinik",
               "Menguap",
-              "Kaki pegal"
+              "Pegal kaki"
             ],
             "a": 1,
-            "fb": "Heat stroke = kegawatan. Dinginkan & panggil medis segera."
+            "fb": "Heat stroke = kegawatan. Jangan lanjut tour."
           },
           {
-            "q": "Yang termasuk gaya berat (gravity) dalam sumber energi LOTO…",
+            "q": "Peran visitor saat darurat kebakaran kecil…",
             "opts": [
-              "Beban tergantung, pegas tertekan, bagian yang bisa jatuh",
-              "Hanya listrik",
-              "Hanya hidrolik",
-              "Hanya bahan kimia"
+              "Langsung jadi pemadam utama",
+              "Lapor escort, jika terlatih APAR & escort izinkan boleh coba padamkan — bila membesar evakuasi ke muster",
+              "Siram dengan air apa saja",
+              "Rekam video untuk bukti"
+            ],
+            "a": 1,
+            "fb": "Visitor: jangan heroik. Ikut escort, evakuasi adalah prioritas."
+          },
+          {
+            "q": "Jika ragu apakah area aman untuk dimasuki sebagai tamu…",
+            "opts": [
+              "Coba masuk dulu, tanya belakangan",
+              "STOP — tanya escort, jangan lanjut sampai jelas aman",
+              "Ikut tamu lain yang nekat",
+              "Lompati barricade"
+            ],
+            "a": 1,
+            "fb": "Ragu = STOP. Tamu yang baik berani bertanya."
+          },
+          {
+            "q": "Larangan yang berlaku untuk visitor di Fuel Farm / Gudang B3…",
+            "opts": [
+              "Boleh merokok bila pakai APD",
+              "Dilarang merokok/api/HP — hanya di smoking area bertanda jauh dari BBM/B3",
+              "Boleh foto dengan flash",
+              "Boleh sentuh valve untuk coba"
+            ],
+            "a": 1,
+            "fb": "Fuel/B3 = zero api & HP."
+          },
+          {
+            "q": "5R yang benar untuk visitor ikut jaga adalah…",
+            "opts": [
+              "Ringkas, Rapi, Resik, Rawat, Rajin",
+              "Rusak, Rugi, Ragu",
+              "Rajin saja",
+              "Tidak perlu, urusan cleaning service"
             ],
             "a": 0,
-            "fb": "Energi gravitasi sering terlewat: beban gantung, pegas, counterweight, dump body."
+            "fb": "5R berlaku untuk semua termasuk tamu."
           },
           {
-            "q": "Saat ragu apakah pekerjaan aman, hal terbaik yang Anda lakukan…",
+            "q": "Jika escort bilang 'area belum aman, kita tunggu' — jawaban visitor yang benar…",
             "opts": [
-              "Lanjut cepat supaya tidak tertinggal",
-              "Tanya rekan, kalau iya ya lanjut",
-              "STOP WORK — minta klarifikasi & JSA baru dari supervisor",
-              "Lapor ke akhir shift"
+              "\"Sebentar aja, saya foto cepat\"",
+              "\"Siap, saya tunggu — keselamatan utama\"",
+              "Memaksa masuk karena jadwal",
+              "Meninggalkan rombongan cari jalan lain"
             ],
-            "a": 2,
-            "fb": "Ketika ragu, jawabannya adalah STOP. Lebih baik berhenti 5 menit daripada cedera seumur hidup."
+            "a": 1,
+            "fb": "Patuhi escort. Tidak ada foto senilai nyawa."
           },
           {
-            "q": "Nikel laterit yang basah dapat berperilaku seperti…",
+            "q": "Nikel laterit basah berperilaku seperti… (awareness visitor)",
             "opts": [
               "Pasir biasa",
-              "Lumpur cair (liquefaction) — dapat menelan alat",
+              "Lumpur cair yang bisa menelan alat — jangan dekati pit/disposal basah",
               "Batu keras",
               "Air biasa"
             ],
             "a": 1
           },
           {
-            "q": "Teknik PASS untuk APAR adalah…",
+            "q": "Tindakan visitor bila melihat APD sendiri rusak / kotor B3…",
             "opts": [
-              "Push, Aim, Start, Shoot",
-              "Pull, Aim, Squeeze, Sweep",
-              "Press, Attack, Stop, Spray",
-              "Pakai, Angkat, Semprot, Selesai"
+              "Tetap pakai biar tidak repot",
+              "Lapor escort & minta ganti — jangan pakai APD tidak layak",
+              "Buang di drainase",
+              "Pinjam APD pekerja tanpa izin"
             ],
             "a": 1
           },
           {
-            "q": "Tujuan utama toolbox meeting harian adalah…",
+            "q": "Medsos & foto area kritis — etika visitor…",
             "opts": [
-              "Sesi ngalor-ngidul sebelum kerja",
-              "Membahas tugas, bahaya, cuaca, dan perubahan kondisi sebelum shift",
-              "Mengisi daftar kehadiran",
-              "Mengulang SOP yang sudah dihafal"
+              "Upload langsung tanpa izin",
+              "Hanya dengan izin tertulis HSE, jangan sebar info internal/oral kritis",
+              "Bebas bila pakai hashtag perusahaan",
+              "Boleh foto pit face close-up untuk konten"
             ],
             "a": 1
-          },
-          {
-            "q": "Kelas api yang MANA menggunakan air BUKAN pemadam yang tepat?",
-            "opts": [
-              "Kelas A (kayu/kertas)",
-              "Kelas B (cairan mudah terbakar)",
-              "Kelas D (logam mudah terbakar)",
-              "Kelas A dan B"
-            ],
-            "a": 2,
-            "fb": "Logam (Kelas D) bereaksi hebat dengan air — gunakan powder khusus."
-          },
-          {
-            "q": "Jika Anda melihat rekanan bekerja tanpa helm, tindakan yang paling tepat…",
-            "opts": [
-              "Diam saja, urusannya dia",
-              "Menegur dengan hormat & mengingatkan aturan APD",
-              "Foto untuk lapor HRD",
-              "Minta dia bayar denda"
-            ],
-            "a": 1,
-            "fb": "Budaya saling menegur (buddy care) adalah fondasi safety. Lakukan dengan hormat."
           }
         ]
       }

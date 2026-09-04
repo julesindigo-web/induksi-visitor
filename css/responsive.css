@@ -25,11 +25,13 @@
   }
 
   .topbar { padding: 0 10px; gap: 6px; }
-  .logo-chip { width: 38px; height: 38px; }
+  .logo-chip { width: 42px; height: 38px; border-radius: 10px; }
   .logo-chip svg { width: 26px; height: 26px; }
-  .brand { display: none; }
+  .brand { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .brand b { font-size: 11px; letter-spacing: 0.05em; }
+  .brand .visitor-pill { font-size: 7.5px; padding: 3px 7px; margin-top: 0; max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
   .modlabel { display: none; }
-  .counter { font-size: 11.5px; min-width: 56px; }
+  .counter { font-size: 11px; min-width: 54px; }
 
   /* Hide secondary icons on mobile */
   #btnBookmark,

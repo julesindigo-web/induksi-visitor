@@ -1,0 +1,219 @@
+/* ============================================================
+   VISITOR PREMIUM — Final polishing untuk edisi VISITOR ONLY
+   Semua override premium & profesional, tidak mengganggu base
+   ============================================================ */
+
+/* --- Cover premium depth --- */
+.slide.cover .inner {
+  position: relative;
+  z-index: 1;
+}
+.slide.cover .logo-big.logo-png {
+  box-shadow:
+    0 24px 64px rgba(43,57,144,0.42),
+    0 8px 24px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(255,255,255,0.10),
+    0 0 36px rgba(251,191,36,0.16);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.slide.cover h1 {
+  text-shadow: 0 2px 18px rgba(0,0,0,0.35), 0 0 28px rgba(251,191,36,0.12);
+  letter-spacing: -0.02em;
+}
+.slide.cover .lead {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+.slide.cover .lead b { color: var(--text); font-weight: 700; }
+.slide.cover .hazard {
+  height: 7px;
+  border-radius: 999px;
+  box-shadow: 0 0 18px rgba(251,191,36,0.22);
+  border: 1px solid rgba(251,191,36,0.18);
+}
+
+/* Badges premium — visitor gold shimmer sudah di tokens, tambah hover lift */
+.badges .badge {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.badges .badge.gold {
+  font-weight: 800;
+}
+
+/* Kicker visitor pill premium (untuk slide visitor) */
+.kicker.visitor-pill {
+  background: var(--amber-soft);
+  border: 1px solid var(--amber-line);
+  color: var(--amber);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+/* Cards premium — visitor hover amber glow */
+.card:hover {
+  border-color: var(--line-strong);
+}
+.cards .card.b:hover { border-color: var(--blue-line); box-shadow: 0 12px 32px rgba(91,124,250,0.18); }
+.cards .card.g:hover { border-color: var(--green-line); box-shadow: 0 12px 32px rgba(74,222,128,0.16); }
+.cards .card.r:hover { border-color: var(--red-line); box-shadow: 0 12px 32px rgba(248,113,113,0.16); }
+.cards .card.t:hover { border-color: var(--teal-line); box-shadow: 0 12px 32px rgba(45,212,191,0.16); }
+.cards .card:not(.b):not(.g):not(.r):not(.t):not(.m):hover {
+  border-color: var(--amber-line);
+  box-shadow: var(--visitor-ring);
+}
+
+/* Two-panel premium */
+.two .panelbox {
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 10px 28px rgba(0,0,0,0.18);
+}
+
+/* Checks premium — subtle lift & visitor accent for danger */
+ul.checks li {
+  box-shadow: 0 1px 0 rgba(255,255,255,0.03) inset;
+}
+ul.checks li:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+ul.checks.danger li:hover { border-color: var(--red-line); }
+
+/* Stats visitor premium */
+.stats .stat {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Quiz premium — selected state more premium */
+.quiz-opt.selected {
+  box-shadow: 0 0 0 3px rgba(251,191,36,0.16), 0 8px 18px rgba(0,0,0,0.18);
+}
+.quiz-opt.correct { box-shadow: 0 0 0 3px rgba(74,222,128,0.16); }
+.quiz-opt.wrong { box-shadow: 0 0 0 3px rgba(248,113,113,0.16); }
+
+/* Sirene buttons premium */
+.siren-btn {
+  position: relative;
+  overflow: hidden;
+}
+.siren-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.10) 45%, transparent 60%);
+  transform: translateX(-110%);
+  transition: transform 0.6s var(--ease-out);
+  pointer-events: none;
+}
+.siren-btn:hover::after { transform: translateX(110%); }
+.siren-btn.danger:hover { box-shadow: 0 0 22px rgba(248,113,113,0.22); }
+.siren-btn.warn:hover { box-shadow: 0 0 22px rgba(251,191,36,0.22); }
+.siren-btn.ok:hover { box-shadow: 0 0 22px rgba(74,222,128,0.18); }
+
+/* Scenario premium */
+.scenario {
+  transition: transform var(--dur-mid) var(--ease-out), border-color var(--dur-mid) var(--ease-out), box-shadow var(--dur-mid) var(--ease-out);
+}
+.scenario:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-md);
+}
+
+/* Signature pad premium */
+.sig-wrap {
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.06) inset;
+}
+.sig-canvas { background: #fff !important; }
+
+/* Botbar premium — primary button visitor gold more luminous */
+.navbtn.primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 52%, #fde68a 100%);
+  color: #1c0f00;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 28px rgba(245,158,11,0.42), 0 1px 0 rgba(255,255,255,0.35) inset;
+  border: 1px solid rgba(139,69,19,0.18);
+}
+.navbtn.primary:hover {
+  box-shadow: 0 16px 40px rgba(245,158,11,0.52), 0 1px 0 rgba(255,255,255,0.45) inset;
+  transform: translateY(-2px) scale(1.01);
+}
+.navbtn.primary:active { transform: translateY(0) scale(0.99); }
+
+/* Topbar iconbtn premium — visitor amber on hover already, enhance */
+.iconbtn:hover { box-shadow: 0 8px 18px rgba(0,0,0,0.18); }
+.iconbtn:focus-visible { border-color: var(--amber); }
+
+/* Hazard stripe premium for cover */
+.hazard {
+  background: var(--hazard-stripes);
+  position: relative;
+}
+.hazard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.10), transparent);
+  animation: shimmer 3.5s linear infinite;
+  opacity: 0.6;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Print premium — visitor pass gold border remains */
+@media print {
+  .cert.visitor {
+    border: 2px solid #f59e0b !important;
+    box-shadow: none !important;
+  }
+  .cert.visitor::after { display: none !important; }
+}
+
+/* Subtle visitor glow behind cover headline */
+.slide.cover h1 em {
+  text-shadow: 0 0 22px rgba(251,191,36,0.22);
+}
+
+/* Improve readability for visitor lead in dark */
+.lead {
+  text-wrap: pretty;
+}
+
+/* Ensure visitor ribbon not clipped on very small screens */
+@media (max-width: 640px) {
+  .visitor-ribbon {
+    top: 14px; right: -30px;
+    font-size: 9px; padding: 6px 40px;
+    transform: rotate(30deg);
+  }
+  .slide.cover .logo-big.logo-png {
+    width: min(340px, 90%);
+  }
+}
+
+/* A11y premium — ensure minimum contrast for visitor pill on light */
+[data-theme="light"] .brand .visitor-pill {
+  color: #1c0f00;
+  border-color: rgba(139,69,19,0.22);
+}
+[data-theme="light"] .modlabel {
+  color: #1c0f00;
+}
+
+/* Micro-interaction: panelbox hover subtle */
+.panelbox:hover {
+  border-color: var(--line-strong);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.16);
+}
+
+/* Final: smooth page transitions */
+.slide.active {
+  animation: slide-in 0.58s var(--ease-out);
+}
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.99); filter: blur(2px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
