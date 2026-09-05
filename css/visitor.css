@@ -209,6 +209,38 @@ ul.checks.danger li:hover { border-color: var(--red-line); }
   box-shadow: 0 10px 28px rgba(0,0,0,0.16);
 }
 
+/* --- Topbar dual-brand lockup (Auxin × Sifang, proporsional) --- */
+.logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+.logo-lockup .logo-chip {
+  width: 88px;
+  height: 44px;
+  background: #0a0f1e;
+  background-image: none;
+  padding: 5px 8px;
+}
+.logo-lockup .logo-chip img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: screen;
+  display: block;
+}
+.logo-lockup .logo-chip svg { display: none; }
+.logo-x {
+  color: var(--dim);
+  font-weight: 800;
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+[data-theme="light"] .logo-lockup .logo-chip {
+  box-shadow: 0 4px 14px rgba(15,23,42,0.22), 0 0 0 1px rgba(15,23,42,0.12);
+}
+
 /* --- Dual branding Auxin (owner) × Sifang (contractor) --- */
 .dual-logos {
   display: flex;
@@ -247,6 +279,12 @@ ul.checks.danger li:hover { border-color: var(--red-line); }
 }
 .logo-card.owner { border-color: rgba(251,191,36,0.35); }
 .logo-card.owner small { color: var(--amber); }
+
+/* Mini variant (sertifikat): proporsi sama, skala kecil */
+.dual-logos.mini { margin-bottom: 4px; }
+.dual-logos.mini .logo-card { padding: 8px 10px 6px; }
+.dual-logos.mini .logo-card img { height: 34px; }
+.dual-logos.mini .logo-card small { font-size: 9px; }
 @media (max-width: 560px) {
   .dual-logos { flex-direction: column; max-width: 340px; }
   .logo-card img { height: 56px; }
@@ -304,6 +342,9 @@ html[lang="zh-CN"] .cert-title {
 }
 
 @media (max-width: 640px) {
+  .logo-lockup { gap: 5px; }
+  .logo-lockup .logo-chip { width: 54px; height: 34px; border-radius: 10px; padding: 4px 5px; }
+  .logo-x { font-size: 11px; }
   .langbtn { height: 36px; min-width: 46px; font-size: 12px; padding: 0 10px; }
   /* Keep topbar from overflowing with the extra lang button */
   #btnAudio,

@@ -64,7 +64,17 @@ const Certificate = (() => {
 
     c.innerHTML = `
       <div class="inner">
-        <div class="kicker">Penutup · VISITOR PASS</div>
+        <div class="dual-logos mini" style="max-width:520px; margin-bottom:6px">
+          <div class="logo-card">
+            <img src="assets/logo-auxin.png" alt="${I18N.getLang() === 'cn' ? 'PT Auxin Development Indonesia 标志' : 'Logo PT. Auxin Development Indonesia'}" loading="lazy"/>
+            <small>${I18N.getLang() === 'cn' ? '业主 • Auxin' : 'Owner • Auxin'}</small>
+          </div>
+          <div class="logo-card">
+            <img src="assets/logo-sifang.png" alt="${I18N.getLang() === 'cn' ? '印尼四方矿业标志' : 'Logo PT. Sifang Mining Indonesia'}" loading="lazy"/>
+            <small>${I18N.getLang() === 'cn' ? '承包商 • 四方' : 'Kontraktor • Sifang'}</small>
+          </div>
+        </div>
+        <div class="kicker">${I18N.getLang() === 'cn' ? '结尾 · 访客证' : 'Penutup · VISITOR PASS'}</div>
         <h2>${I18N.getLang() === 'cn' ? '访客证 <em>K3L</em> — Auxin × 四方矿业' : 'Visitor Pass <em>K3L</em> — Auxin × Sifang'}</h2>
         <p class="lead">${I18N.getLang() === 'cn'
           ? '恭喜！您已通过<b>访客培训</b>，本证参观期间须随身携带，仅限陪同参观。'
