@@ -2,7 +2,7 @@
 
 > **Induksi Keselamatan Khusus TAMU / VISITOR (Escorted Access Only)**
 > Pertambangan Nikel Open Pit • Edisi Visitor Ringkas
-> Owner: PT. Auxin Development Indonesia • Kontraktor/Mitra Kerja: PT. Sifang Mining Indonesia
+> PT. Auxin Development Indonesia × PT. Sifang Mining Indonesia
 
 Versi **fork** dari repo `17. INDUKSI` (50 slide general) yang **difokuskan 100% untuk VISITOR** — bukan untuk karyawan baru, operator, atau driver.
 Durasi **15-20 menit**, **±24 slide**, **Visitor Pass 7 hari** (bukan sertifikat pekerja 12 bulan).

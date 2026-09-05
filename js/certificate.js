@@ -67,11 +67,11 @@ const Certificate = (() => {
         <div class="dual-logos mini" style="max-width:520px; margin-bottom:6px">
           <div class="logo-card">
             <img src="assets/logo-auxin.png" alt="${I18N.getLang() === 'cn' ? 'PT Auxin Development Indonesia 标志' : 'Logo PT. Auxin Development Indonesia'}" loading="lazy"/>
-            <small>${I18N.getLang() === 'cn' ? '业主 • Auxin' : 'Owner • Auxin'}</small>
+            <small>Auxin</small>
           </div>
           <div class="logo-card">
             <img src="assets/logo-sifang.png" alt="${I18N.getLang() === 'cn' ? '印尼四方矿业标志' : 'Logo PT. Sifang Mining Indonesia'}" loading="lazy"/>
-            <small>${I18N.getLang() === 'cn' ? '承包商 • 四方' : 'Kontraktor • Sifang'}</small>
+            <small>${I18N.getLang() === 'cn' ? '四方' : 'Sifang'}</small>
           </div>
         </div>
         <div class="kicker">${I18N.getLang() === 'cn' ? '结尾 · 访客证' : 'Penutup · VISITOR PASS'}</div>

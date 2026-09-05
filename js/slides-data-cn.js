@@ -30,13 +30,13 @@ const SLIDES_DATA_CN = [
         </div>
         <div class="inner">
           <div class="dual-logos">
-            <div class="logo-card owner">
+            <div class="logo-card">
               <img src="assets/logo-auxin.png" alt="PT Auxin Development Indonesia 标志" loading="lazy"/>
-              <small>业主 • PT Auxin Development Indonesia</small>
+              <small>PT Auxin Development Indonesia</small>
             </div>
             <div class="logo-card">
               <img src="assets/logo-sifang.png" alt="印尼四方矿业标志" loading="lazy"/>
-              <small>承包商 • 印尼四方矿业</small>
+              <small>印尼四方矿业</small>
             </div>
           </div>
           <div class="co">PT Auxin Development Indonesia × 印尼四方矿业</div>
@@ -766,13 +766,13 @@ const SLIDES_DATA_CN = [
       return `
         <div class="inner" style="text-align:center; padding-top:30px">
           <div class="dual-logos" style="max-width:640px">
-            <div class="logo-card owner">
+            <div class="logo-card">
               <img src="assets/logo-auxin.png" alt="PT Auxin Development Indonesia 标志" loading="lazy"/>
-              <small>业主 • PT Auxin Development Indonesia</small>
+              <small>PT Auxin Development Indonesia</small>
             </div>
             <div class="logo-card">
               <img src="assets/logo-sifang.png" alt="印尼四方矿业标志" loading="lazy"/>
-              <small>承包商 • 印尼四方矿业</small>
+              <small>印尼四方矿业</small>
             </div>
           </div>
           <h1 style="margin-top:14px">感谢<em>您</em> — 访客</h1>

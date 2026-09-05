@@ -49,13 +49,13 @@ const SLIDES_DATA = [
         </div>
         <div class="inner">
           <div class="dual-logos">
-            <div class="logo-card owner">
+            <div class="logo-card">
               <img src="assets/logo-auxin.png" alt="Logo PT. Auxin Development Indonesia" loading="lazy"/>
-              <small>Owner • PT. Auxin Development Indonesia</small>
+              <small>PT. Auxin Development Indonesia</small>
             </div>
             <div class="logo-card">
               <img src="assets/logo-sifang.png" alt="Logo PT. Sifang Mining Indonesia" loading="lazy"/>
-              <small>Kontraktor • PT. Sifang Mining Indonesia</small>
+              <small>PT. Sifang Mining Indonesia</small>
             </div>
           </div>
           <div class="co">PT. Auxin Development Indonesia × PT. Sifang Mining Indonesia</div>
@@ -883,13 +883,13 @@ const SLIDES_DATA = [
       return `
         <div class="inner" style="text-align:center; padding-top:30px">
           <div class="dual-logos" style="max-width:640px">
-            <div class="logo-card owner">
+            <div class="logo-card">
               <img src="assets/logo-auxin.png" alt="Logo PT. Auxin Development Indonesia" loading="lazy"/>
-              <small>Owner • PT. Auxin Development Indonesia</small>
+              <small>PT. Auxin Development Indonesia</small>
             </div>
             <div class="logo-card">
               <img src="assets/logo-sifang.png" alt="Logo PT. Sifang Mining Indonesia" loading="lazy"/>
-              <small>Kontraktor • PT. Sifang Mining Indonesia</small>
+              <small>PT. Sifang Mining Indonesia</small>
             </div>
           </div>
           <h1 style="margin-top:14px">Terima <em>Kasih</em> — Visitor</h1>
