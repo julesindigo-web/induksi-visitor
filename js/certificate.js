@@ -9,7 +9,11 @@ const Certificate = (() => {
     const u = State.get('user') || {};
     const post = State.get('posttest') || {};
     const sig = State.get('signature');
-    const passed = post.submitted && (post.score || 0) >= 80;
+    // Fail-closed: LSR wajib 100% (lsrPass) + umum lulus (umPass) + skor >=80.
+    // State lama tanpa flag dianggap belum valid dan wajib remedial.
+    const lsrOk = post.lsrPass === true;
+    const umOk = post.umPass === true;
+    const passed = post.submitted === true && lsrOk && umOk && (post.score || 0) >= 80;
 
     if (!passed) {
       c.innerHTML = `
@@ -20,7 +24,8 @@ const Certificate = (() => {
             <h3><i></i>Belum Memenuhi Syarat</h3>
             <p style="color:var(--text); line-height:1.7">
               Untuk menerbitkan sertifikat induksi, Anda harus lulus <b>Post-Test</b> dengan skor ≥ 80% (dan 100% pada bagian Life-Saving Rules).<br/>
-              Status post-test saat ini: <b>${post.submitted ? (post.score + '%') : 'belum dikerjakan'}</b>.
+              Status post-test saat ini: <b>${post.submitted ? (post.score + '%') : 'belum dikerjakan'}</b><br/>
+              <span style="font-size:12.5px; color:var(--muted)">LSR: ${post.submitted ? (post.lsrPass ? '✅ 100%' : '❌ belum 100%') : '—'} · Umum: ${post.submitted ? (post.umPass ? '✅ lulus' : '❌ belum lulus') : '—'}</span>
             </p>
           </div>
           <p class="lead" style="margin-top:14px">Silakan kembali ke slide sebelumnya dan selesaikan post-test terlebih dahulu.</p>
@@ -135,12 +140,6 @@ const Certificate = (() => {
   function addDays(dateStr, days) {
     const d = new Date(dateStr);
     d.setDate(d.getDate() + days);
-    return d.toISOString().slice(0, 10);
-  }
-
-  function addMonths(dateStr, m) {
-    const d = new Date(dateStr);
-    d.setMonth(d.getMonth() + m);
     return d.toISOString().slice(0, 10);
   }
 

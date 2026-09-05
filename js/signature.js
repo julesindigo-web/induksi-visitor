@@ -92,7 +92,12 @@ const Signature = (() => {
   }
 
   function save() {
-    if (!canvas.width) return;
+    if (!canvas || !canvas.width) return;
+    const u = State.get('user') || {};
+    if (!u.name || !u.nik) {
+      Effects.toast('Lengkapi nama & NIK sebelum simpan', 'warn');
+      return;
+    }
     // Check if anything was drawn
     const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
     let hasInk = false;
@@ -102,13 +107,15 @@ const Signature = (() => {
     const dataURL = canvas.toDataURL('image/png');
     State.set('signature', dataURL);
 
-    const u = State.get('user') || {};
-    if (!u.name || !u.nik) {
-      Effects.toast('Lengkapi nama & NIK sebelum simpan', 'warn');
-      return;
+    // Jangan timpa tanggal kunjungan pilihan user; isi tanggal dokumen bila kosong.
+    const today = new Date().toISOString().slice(0, 10);
+    if (!u.visitDate) {
+      u.visitDate = today;
     }
-
-    State.set('user.date', new Date().toISOString().slice(0, 10));
+    if (!u.date) {
+      u.date = u.visitDate;
+    }
+    State.set('user', u);
     Effects.toast('✓ Tanda tangan disimpan', 'ok');
     Effects.pulse(canvas);
     setTimeout(() => Navigation.next(), 700);

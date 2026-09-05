@@ -821,6 +821,9 @@
   padding-bottom: 8px;
   display: inline-block;
   min-width: 60%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .cert-id {
@@ -828,6 +831,13 @@
   font-size: 11px;
   color: #64748b;
   letter-spacing: 0.10em;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.6;
+}
+
+.cert-title {
+  overflow-wrap: break-word;
 }
 
 .cert-details {
@@ -935,4 +945,18 @@
   font-weight: 800;
   font-size: 22px;
   color: var(--text);
+}
+
+/* ---------- DESIGN FIX: stabilitas layout + ikon ---------- */
+.ico-svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  flex: 0 0 auto;
+}
+
+#quizContainerPretest,
+#quizContainerPosttest,
+#certContainer {
+  min-height: 40vh;
 }

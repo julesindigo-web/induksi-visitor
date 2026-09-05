@@ -293,7 +293,7 @@ ul.checks li {
   background: var(--surface);
   font-size: 13.5px;
   line-height: 1.55;
-  color: #d7e2ef;
+  color: var(--text);
   transition: all var(--dur-fast) var(--ease-out);
 }
 
@@ -589,7 +589,7 @@ ul.checks li b { color: var(--text); }
 .cover .logo-big.logo-png {
   width: min(420px, 85%);
   height: auto;
-  aspect-ratio: 696 / 288;
+  aspect-ratio: 669 / 373;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;

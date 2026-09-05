@@ -81,7 +81,7 @@ Durasi **15-20 menit**, **±24 slide**, **Visitor Pass 7 hari** (bukan sertifika
 │   └── ... (sisa sama: icons, app, navigation, quiz, etc)
 ├── data/
 │   ├── quiz.json            ← **REWRITE visitor (5 + 5+11)**
-│   └── glossary.json        ← **FILTER visitor (40 istilah tamu)**
+│   └── glossary.json        ← **FILTER visitor (41 istilah tamu)**
 └── assets/                  ← logo, favicon
 ```
 
@@ -160,7 +160,7 @@ Post-Test
 
 - [x] `js/slides-data.js` syntax OK (26 types)
 - [x] `data/quiz.json` valid (pretest 5, lsr 5, umum 11)
-- [x] `data/glossary.json` visitor 40 items
+- [x] `data/glossary.json` visitor 41 items
 - [x] Storage key terpisah
 - [x] Certificate SMI-VIS + 7 days
 - [ ] Manual click-through 26 slide di browser (disarankan)

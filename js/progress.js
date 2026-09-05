@@ -6,6 +6,9 @@ const Progress = (() => {
   function update(pct) {
     const fill = document.getElementById('progressFill');
     if (fill) fill.style.width = pct + '%';
+    // Fallback: layout utama memakai #bar (index.html), bukan #progressFill.
+    const bar = document.getElementById('bar');
+    if (bar && !fill) bar.style.width = pct + '%';
     const text = document.getElementById('progressText');
     if (text) text.textContent = pct + '%';
     const ring = document.getElementById('progressRing');

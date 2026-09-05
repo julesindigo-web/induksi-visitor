@@ -19,7 +19,7 @@ const Quiz = (() => {
 
   function renderPretest() {
     load().then(d => {
-      const c = document.getElementById('quizContainer');
+      const c = document.getElementById('quizContainerPretest') || document.getElementById('quizContainer');
       if (!c) return;
       const saved = State.get('pretest') || {};
       const submitted = saved.submitted;
@@ -70,7 +70,7 @@ const Quiz = (() => {
 
   function renderPosttest() {
     load().then(d => {
-      const c = document.getElementById('quizContainer');
+      const c = document.getElementById('quizContainerPosttest') || document.getElementById('quizContainer');
       if (!c) return;
       const saved = State.get('posttest') || {};
       const submitted = saved.submitted;
@@ -91,8 +91,8 @@ const Quiz = (() => {
 
           <div id="posttestSummary" class="quiz-summary" style="display:${submitted ? 'block' : 'none'}">
             <div class="score">${saved.score || 0}%</div>
-            <div class="verdict">${saved.score >= 80 ? '✅ LULUS — lanjut ke tanda tangan & sertifikat.' : '❌ Belum lulus. Pelajari ulang materi & coba remedial.'}</div>
-            ${saved.score >= 80
+            <div class="verdict">${(saved.lsrPass && saved.umPass && (saved.score || 0) >= 80) ? '✅ LULUS — lanjut ke tanda tangan & sertifikat.' : '❌ Belum lulus. Pelajari ulang materi & coba remedial.'}</div>
+            ${(saved.lsrPass && saved.umPass && (saved.score || 0) >= 80)
               ? '<button class="navbtn primary" id="posttestContinue" style="margin-top:14px">Lanjut ke Tanda Tangan</button>'
               : '<button class="navbtn" id="posttestRetry" style="margin-top:14px">Reset & Coba Lagi</button>'}
           </div>
@@ -178,11 +178,17 @@ const Quiz = (() => {
     q.opts.forEach((o, j) => {
       const opt = document.createElement('label');
       opt.className = 'quiz-opt';
+      opt.style.position = 'relative';
       const radio = document.createElement('input');
       radio.type = 'radio';
       radio.name = `${group}-${i}`;
       radio.value = j;
-      radio.style.display = 'none';
+      // Aksesibel: jangan display:none (menghapus dari tab order). Sembunyikan visual saja.
+      radio.style.position = 'absolute';
+      radio.style.opacity = '0';
+      radio.style.width = '1px';
+      radio.style.height = '1px';
+      radio.setAttribute('aria-label', q.opts[j]);
       opt.appendChild(radio);
 
       const dot = document.createElement('span');
@@ -205,6 +211,13 @@ const Quiz = (() => {
           opts.querySelectorAll('.quiz-opt').forEach(el => el.classList.remove('selected'));
           opt.classList.add('selected');
           radio.checked = true;
+        });
+        // Sinkron saat radio dipilih via keyboard (Tab + Space).
+        radio.addEventListener('change', () => {
+          if (radio.checked) {
+            opts.querySelectorAll('.quiz-opt').forEach(el => el.classList.remove('selected'));
+            opt.classList.add('selected');
+          }
         });
       }
       opts.appendChild(opt);

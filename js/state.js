@@ -22,6 +22,8 @@ const State = (() => {
       answers: {},
       submitted: false,
       score: 0,
+      lsrPass: false,
+      umPass: false,
     },
     signature: null,
     user: {
@@ -90,9 +92,10 @@ const State = (() => {
       data.progress = 0;
       data.quiz = { answers: {}, submitted: false, score: 0 };
       data.pretest = { answers: {}, submitted: false, score: 0 };
-      data.posttest = { answers: {}, submitted: false, score: 0 };
+      data.posttest = { answers: {}, submitted: false, score: 0, lsrPass: false, umPass: false };
       data.certified = false;
       data.certifiedAt = null;
+      data.certId = null;
       data.signature = null;
       persist();
     },

@@ -1,7 +1,7 @@
 /* ============================================================
    SLIDES DATA — VISITOR EDITION (khusus tamu/visitor escorted)
    Fokus: visitor saja, bukan karyawan baru / operator / driver
-   Durasi target: 15-20 menit, ~24 slide (vs 50 general)
+   Durasi target: 15-20 menit, 26 tampilan (vs 50 general)
    ============================================================ */
 
 const SLIDES_DATA = [
@@ -66,7 +66,7 @@ const SLIDES_DATA = [
             <h3><i></i>Perbedaan Utama — Visitor vs Pekerja</h3>
             <ul style="font-size:12.5px">
               <li><b>Visitor = tamu didampingi</b> — tidak boleh bekerja, mengemudi di haul road tanpa KIMPER, atau masuk zona terlarang tanpa izin.</li>
-              <li><b>Pekerja = 50 slide + 12 bulan sertifikat</b> — Visitor = <b>~24 slide ringkas + Visitor Pass 7 hari</b>.</li>
+              <li><b>Pekerja = 50 slide + 12 bulan sertifikat</b> — Visitor = <b>26 tampilan ringkas + Visitor Pass 7 hari</b>.</li>
               <li>Ikuti instruksi <b>Host / Escort</b> Anda setiap saat. Jangan terpisah dari rombongan.</li>
             </ul>
           </div>
@@ -86,7 +86,7 @@ const SLIDES_DATA = [
       return `
         <div class="inner stagger">
           <div class="kicker">Visitor — Agenda Ringkas</div>
-          <h2>Agenda <em>Induksi Visitor</em> (24 Slide)</h2>
+          <h2>Agenda <em>Induksi Visitor</em> (26 Tampilan)</h2>
           <p class="lead">Hanya yang perlu Anda tahu sebagai tamu — tanpa materi operator/teknis berat. Tidak ada yang boleh dilewati.</p>
           <div class="cards">
             <article class="card b"><div class="ico">${Icons.get('building', { class: 'ico-svg' })}</div><h3>01 · Profil & Aturan Dasar</h3><p>Site nikel open pit, kebijakan Zero Harm, & aturan tamu (escort, badge, foto).</p></article>
@@ -249,7 +249,7 @@ const SLIDES_DATA = [
     type: 'pretest',
     mod: 'EVAL',
     title: 'Pre-Test Visitor',
-    render() { return '<div id="quizContainer"></div>'; },
+    render() { return '<div id="quizContainerPretest"></div>'; },
     afterRender() { Quiz.renderPretest(); },
   },
 
@@ -427,10 +427,10 @@ const SLIDES_DATA = [
           <div class="kicker">Visitor — Rambu & Sirene</div>
           <h2>Rambu & <em>Alarm</em> — Yang Wajib Anda Kenal</h2>
           <div class="cards stagger">
-            <article class="card r" style="border-color:var(--red-line)">${Icons.get('stop', { class: 'ico-svg', stroke: 'var(--red)' })}<h3 style="color:var(--red)">Merah = Larangan</h3><p>Stop, bahaya, APAR/hydrant. <b>Barricade merah = jangan lewati</b>.</p></article>
-            <article class="card" style="border-color:var(--amber-line)">${Icons.get('warn', { class: 'ico-svg', stroke: 'var(--amber)' })}<h3 style="color:var(--amber)">Kuning = Hati-hati</h3><p>Licin, longsor, alat berat. Ikuti instruksi escort.</p></article>
-            <article class="card b" style="border-color:var(--blue-line)">${Icons.get('info', { class: 'ico-svg', stroke: 'var(--blue)' })}<h3 style="color:var(--blue)">Biru = Perintah</h3><p>Wajib helm, wajib vest, wajib lapor. Tamu paling sering lupa helm di viewpoint.</p></article>
-            <article class="card g" style="border-color:var(--green-line)">${Icons.get('check', { class: 'ico-svg', stroke: 'var(--green)' })}<h3 style="color:var(--green)">Hijau = Aman</h3><p>Jalur evakuasi, muster point, P3K. Hafalkan di lokasi Anda berdiri sekarang.</p></article>
+            <article class="card r" style="border-color:var(--red-line)"><div class="ico">${Icons.get('stop', { class: 'ico-svg', stroke: 'var(--red)' })}</div><h3 style="color:var(--red)">Merah = Larangan</h3><p>Stop, bahaya, APAR/hydrant. <b>Barricade merah = jangan lewati</b>.</p></article>
+            <article class="card" style="border-color:var(--amber-line)"><div class="ico">${Icons.get('warn', { class: 'ico-svg', stroke: 'var(--amber)' })}</div><h3 style="color:var(--amber)">Kuning = Hati-hati</h3><p>Licin, longsor, alat berat. Ikuti instruksi escort.</p></article>
+            <article class="card b" style="border-color:var(--blue-line)"><div class="ico">${Icons.get('info', { class: 'ico-svg', stroke: 'var(--blue)' })}</div><h3 style="color:var(--blue)">Biru = Perintah</h3><p>Wajib helm, wajib vest, wajib lapor. Tamu paling sering lupa helm di viewpoint.</p></article>
+            <article class="card g" style="border-color:var(--green-line)"><div class="ico">${Icons.get('check', { class: 'ico-svg', stroke: 'var(--green)' })}</div><h3 style="color:var(--green)">Hijau = Aman</h3><p>Jalur evakuasi, muster point, P3K. Hafalkan di lokasi Anda berdiri sekarang.</p></article>
           </div>
           <div class="panelbox warn" style="margin-top:16px">
             <h3><i></i>Kode Sirene — Hafalkan Polanya (detail demo di slide berikutnya)</h3>
@@ -648,9 +648,9 @@ const SLIDES_DATA = [
               <span>✅ ALL CLEAR — 1× panjang</span>
               <span class="icon">🔊</span>
             </button>
-            <button class="siren-btn" data-sirene="blasting">
+            <button class="siren-btn warn" data-sirene="blasting" aria-label="Demo sirene blasting">
               <span>💥 BLASTING — pola peledakan</span>
-              <span class="icon">🔊</span>
+              <span class="icon" aria-hidden="true">🔊</span>
             </button>
           </div>
           <div class="footnote" style="margin-top:14px">Visitor: <b>3× panjang = langsung ikut escort ke muster</b>. Jangan tanya “ini latihan atau beneran?” — anggap beneran.</div>
@@ -788,7 +788,7 @@ const SLIDES_DATA = [
     type: 'posttest',
     mod: 'EVAL',
     title: 'Post-Test Visitor & Visitor Pass',
-    render() { return '<div id="quizContainer"></div>'; },
+    render() { return '<div id="quizContainerPosttest"></div>'; },
     afterRender() { Quiz.renderPosttest(); },
   },
 
@@ -819,12 +819,12 @@ const SLIDES_DATA = [
             <div class="panelbox">
               <h3><i></i>Identitas Visitor</h3>
               <div style="display:grid; gap:10px">
-                <input id="sig-name" placeholder="Nama Lengkap Visitor" value="${u.name || ''}" style="padding:10px 12px; border-radius:10px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); font-family:inherit; font-size:13px"/>
-                <input id="sig-nik" placeholder="No. KTP / ID" value="${u.nik || ''}" style="padding:10px 12px; border-radius:10px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); font-family:inherit; font-size:13px"/>
-                <input id="sig-pos" placeholder="Instansi / Perusahaan Asal" value="${u.position || ''}" style="padding:10px 12px; border-radius:10px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); font-family:inherit; font-size:13px"/>
-                <input id="sig-dept" placeholder="Keperluan Kunjungan" value="${u.department || ''}" style="padding:10px 12px; border-radius:10px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); font-family:inherit; font-size:13px"/>
-                <input id="sig-host" placeholder="Nama Host / Escort Site" value="${u.host || ''}" style="padding:10px 12px; border-radius:10px; border:1px solid var(--amber-line); background:var(--amber-soft); color:var(--text); font-family:inherit; font-size:13px"/>
-                <input id="sig-date" type="date" value="${u.visitDate || u.date || new Date().toISOString().slice(0,10)}" style="padding:10px 12px; border-radius:10px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); font-family:inherit; font-size:13px"/>
+                <input id="sig-name" aria-label="Nama Lengkap Visitor" placeholder="Nama Lengkap Visitor" value="${u.name || ''}" style="padding:10px 12px; border-radius:10px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); font-family:inherit; font-size:13px"/>
+                <input id="sig-nik" aria-label="Nomor KTP atau ID" placeholder="No. KTP / ID" value="${u.nik || ''}" style="padding:10px 12px; border-radius:10px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); font-family:inherit; font-size:13px"/>
+                <input id="sig-pos" aria-label="Instansi atau Perusahaan Asal" placeholder="Instansi / Perusahaan Asal" value="${u.position || ''}" style="padding:10px 12px; border-radius:10px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); font-family:inherit; font-size:13px"/>
+                <input id="sig-dept" aria-label="Keperluan Kunjungan" placeholder="Keperluan Kunjungan" value="${u.department || ''}" style="padding:10px 12px; border-radius:10px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); font-family:inherit; font-size:13px"/>
+                <input id="sig-host" aria-label="Nama Host atau Escort Site" placeholder="Nama Host / Escort Site" value="${u.host || ''}" style="padding:10px 12px; border-radius:10px; border:1px solid var(--amber-line); background:var(--amber-soft); color:var(--text); font-family:inherit; font-size:13px"/>
+                <input id="sig-date" aria-label="Tanggal Kunjungan" type="date" value="${u.visitDate || u.date || new Date().toISOString().slice(0,10)}" style="padding:10px 12px; border-radius:10px; border:1px solid var(--line-2); background:var(--surface); color:var(--text); font-family:inherit; font-size:13px"/>
               </div>
             </div>
             <div class="panelbox warn">

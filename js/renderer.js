@@ -3,6 +3,8 @@
    ============================================================ */
 
 const Renderer = (() => {
+  let pendingHide = null;
+  let pendingShow = null;
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
   function buildSlide(slide, index) {
@@ -31,11 +33,16 @@ const Renderer = (() => {
     const prev = document.querySelector('.slide.active');
     const next = all[i];
     if (!next) return;
+    // Batalkan transisi tertunda agar navigasi cepat tidak salah menonaktifkan slide baru.
+    if (pendingHide) { clearTimeout(pendingHide); pendingHide = null; }
+    if (pendingShow) { clearTimeout(pendingShow); pendingShow = null; }
     if (prev && prev !== next) {
       prev.classList.add('leaving');
-      setTimeout(() => prev.classList.remove('leaving', 'active'), 240);
+      pendingHide = setTimeout(() => prev.classList.remove('leaving', 'active'), 240);
     }
-    setTimeout(() => {
+    pendingShow = setTimeout(() => {
+      // Jangan aktifkan bila user sudah pindah ke slide lain sebelum timeout jalan.
+      if (!document.contains(next)) return;
       next.classList.add('active');
       const s = slides[i];
       if (s && typeof s.afterRender === 'function') {

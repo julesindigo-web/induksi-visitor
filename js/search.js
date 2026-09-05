@@ -43,8 +43,9 @@ const Search = (() => {
       if (title.includes(term)) score += 5;
       if (mod.includes(term)) score += 2;
       if (body.includes(term)) score += 1;
-      // Word frequency
-      const re = new RegExp('\\b' + term + '\\b', 'g');
+      // Word frequency (escape user input agar bukan regex injection)
+      const esc = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const re = new RegExp('\\b' + esc + '\\b', 'g');
       const m = body.match(re);
       if (m) score += m.length;
       return { i, s, score };
