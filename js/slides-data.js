@@ -94,7 +94,7 @@ const SLIDES_DATA = [
             <article class="card g"><div class="ico">${Icons.get('helmet', { class: 'ico-svg' })}</div><h3>03 · APD Visitor & Kesehatan</h3><p>5 APD wajib tamu, heat stress, debu, kebisingan — perlindungan minimal.</p></article>
             <article class="card r"><div class="ico">${Icons.get('mountain', { class: 'ico-svg' })}</div><h3>04 · Bahaya Area (Ikhtisar)</h3><p>Traffic pejalan kaki, alat berat blind spot, longsor laterit — awareness, bukan operasi.</p></article>
             <article class="card"><div class="ico">${Icons.get('siren', { class: 'ico-svg' })}</div><h3>05 · Darurat & Evakuasi</h3><p>Alarm, muster point, peran Anda sebagai tamu: ikut escort, jangan heroik.</p></article>
-            <article class="card t"><div class="ico">${Icons.get('bed', { class: 'ico-svg' })}</div><h3>06 · Etika & Lingkungan</h3><p>Larangan judi/intimidasi, sampah, satwa, whisperblower — jadi tamu terhormat.</p></article>
+            <article class="card t"><div class="ico">${Icons.get('bed', { class: 'ico-svg' })}</div><h3>06 · Etika & Lingkungan</h3><p>Larangan judi/intimidasi, sampah, satwa, whistleblower (pelaporan dilindungi) — jadi tamu terhormat.</p></article>
             <article class="card g"><div class="ico">${Icons.get('clipboard', { class: 'ico-svg' })}</div><h3>07 · Studi Kasus Visitor</h3><p>3 insiden nyata yang melibatkan tamu — pelajaran 30 detik menyelamatkan nyawa.</p></article>
             <article class="card"><div class="ico">${Icons.get('check', { class: 'ico-svg' })}</div><h3>08 · Evaluasi & Visitor Pass</h3><p>Pre-test, post-test 80% lulus, tanda tangan, Visitor Pass 7 hari (bukan 12 bulan).</p></article>
           </div>
@@ -366,7 +366,7 @@ const SLIDES_DATA = [
             <ul>
               <li>Tanya escort sebelum melangkah: <b>“Area ini zona apa?”</b></li>
               <li>Lihat rambu, barricade, & pita — <b>jangan pindahkan apapun</b>.</li>
-              <li>Peta site 1:40m & jetty layout dibagikan saat briefing lapangan (bukan dihapal, cek papan info).</li>
+              <li>Peta site 1:40m & jetty layout dibagikan saat briefing lapangan (bukan dihafal, cek papan info).</li>
             </ul>
           </div>
           <div class="footnote">Hari pertama wajib induksi visitor + briefing rute spesifik escort. Jangan minta “tour tambahan” di luar plan.</div>
@@ -440,7 +440,7 @@ const SLIDES_DATA = [
               <li><b>1× panjang:</b> ALL CLEAR — tunggu instruksi escort, jangan jalan sendiri.</li>
             </ul>
           </div>
-          <div class="footnote">Sebagai visitor, Anda <b>tidak perlu</b> hapal channel radio — escort yang akan komunikasi. Tugas Anda: <b>dengar & ikut</b>.</div>
+          <div class="footnote">Sebagai visitor, Anda <b>tidak perlu</b> menghafal channel radio — escort yang akan komunikasi. Tugas Anda: <b>dengar & ikut</b>.</div>
         </div>
       `;
     },

@@ -11,11 +11,15 @@
   });
 
   function bootApp() {
+    // 0. Apply bilingual static chrome first (title, topbar, botbar)
+    try { I18N.applyStatic(); } catch (e) {}
+    const ACTIVE = I18N.activeSlides();
+
     // 1. Mount slides into stage
-    Renderer.mount(SLIDES_DATA);
+    Renderer.mount(ACTIVE);
 
     // 2. Build menu
-    Menu.build(SLIDES_DATA);
+    Menu.build(ACTIVE);
 
     // 3. Particles
     Effects.particles(28);
@@ -25,7 +29,7 @@
 
     // 5. Navigation
     Navigation.init({
-      slides: SLIDES_DATA,
+      slides: ACTIVE,
       onChange(idx, slide) {
         // Audio narration
         if (State.get('settings.audio')) {
@@ -50,20 +54,22 @@
 
     // 9. Resume position
     const savedIdx = State.get('idx') || 0;
-    if (savedIdx > 0 && savedIdx < SLIDES_DATA.length) {
+    if (savedIdx > 0 && savedIdx < ACTIVE.length) {
       Navigation.go(savedIdx);
     }
 
     // 10. Welcome toast (first time only)
     if (!Storage.get('welcomed')) {
       setTimeout(() => {
-        Effects.toast('Tekan ? untuk panduan atau M untuk daftar materi', 'ok');
+        Effects.toast(I18N.t('welcome'), 'ok');
         Storage.set('welcomed', true);
       }, 1200);
     }
   }
 
   function bindTopbar() {
+    // Bilingual toggle (reload-safe to avoid duplicate listeners)
+    document.getElementById('btnLang')?.addEventListener('click', () => I18N.toggle());
     // Menu toggle
     document.getElementById('btnMenu')?.addEventListener('click', () => {
       const m = document.getElementById('menu');
@@ -84,14 +90,14 @@
     document.getElementById('btnGlossary')?.addEventListener('click', () => Glossary.open());
 
     // Search
-    document.getElementById('btnSearch')?.addEventListener('click', () => Search.open(SLIDES_DATA));
+    document.getElementById('btnSearch')?.addEventListener('click', () => Search.open(I18N.activeSlides()));
 
     // Bookmarks
     document.getElementById('btnBookmark')?.addEventListener('click', () => {
       const idx = Navigation.idx;
       Bookmarks.toggle(idx);
     });
-    document.getElementById('btnBookmarks')?.addEventListener('click', () => Bookmarks.open(SLIDES_DATA));
+    document.getElementById('btnBookmarks')?.addEventListener('click', () => Bookmarks.open(I18N.activeSlides()));
 
     // Help
     document.getElementById('btnHelp')?.addEventListener('click', () => Help.open());
@@ -108,5 +114,5 @@
   }
 
   // Expose for debugging
-  window.__APP__ = { State, Storage, Navigation, Menu, Glossary, Search, Bookmarks, Help, Audio, Effects, Progress, Renderer, Quiz, Signature, Certificate, Theme };
+  window.__APP__ = { State, Storage, Navigation, Menu, Glossary, Search, Bookmarks, Help, Audio, Effects, Progress, Renderer, Quiz, Signature, Certificate, Theme, I18N };
 })();

@@ -7,9 +7,9 @@ const Help = (() => {
     const overlay = ensureOverlay();
     overlay.innerHTML = `
       <div class="overlay-header">
-        <div class="overlay-title">⌨ Panduan & Pintasan</div>
+        <div class="overlay-title">${I18N.t('help.title')}</div>
         <div class="overlay-actions">
-          <button class="iconbtn" id="helpClose" aria-label="Tutup">
+          <button class="iconbtn" id="helpClose" aria-label="${I18N.t('btn.close')}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
           </button>
         </div>

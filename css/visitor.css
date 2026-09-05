@@ -217,3 +217,48 @@ ul.checks.danger li:hover { border-color: var(--red-line); }
   from { opacity: 0; transform: translateY(16px) scale(0.99); filter: blur(2px); }
   to { opacity: 1; transform: none; filter: none; }
 }
+
+/* --- Bilingual toggle + abbreviation (ID-CN, no layout break) --- */
+.langbtn {
+  height: 40px;
+  min-width: 52px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid var(--amber-line);
+  background: var(--amber-soft);
+  color: var(--amber);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  flex: 0 0 auto;
+  transition: transform var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+.langbtn:hover { background: rgba(251,191,36,0.20); transform: translateY(-1px); }
+.langbtn:active { transform: scale(0.96); }
+
+abbr.abbr {
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  cursor: help;
+  white-space: nowrap;
+}
+abbr.abbr:hover { color: var(--amber); }
+
+/* Chinese text uses Noto Sans SC fallback, same metrics to avoid reflow */
+html[lang="zh-CN"] body {
+  font-family: "Noto Sans SC", "Manrope", system-ui, sans-serif;
+}
+html[lang="zh-CN"] .cover h1,
+html[lang="zh-CN"] h2,
+html[lang="zh-CN"] .cert-title {
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 640px) {
+  .langbtn { height: 36px; min-width: 46px; font-size: 12px; padding: 0 10px; }
+  /* Keep topbar from overflowing with the extra lang button */
+  #btnAudio,
+  #btnHelp { display: none; }
+}

@@ -113,8 +113,8 @@ const Certificate = (() => {
         </div>
 
         <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:14px">
-          <button class="navbtn primary" id="certDownload">⬇ Unduh / Cetak Visitor Pass</button>
-          <button class="navbtn" id="certShare">📤 Bagikan</button>
+          <button class="navbtn primary" id="certDownload">${I18N.t('cert.download')}</button>
+          <button class="navbtn" id="certShare">${I18N.t('cert.share')}</button>
         </div>
 
         <div class="footnote" style="margin-top:14px">Visitor Pass <b>bukan sertifikat pekerja</b>. Berlaku <b>maks. 7 hari</b> & wajib didampingi. Untuk kunjungan berikutnya wajib induksi ulang. Dilarang mengoperasikan alat berat / masuk area terlarang.</div>
@@ -126,7 +126,7 @@ const Certificate = (() => {
     // Only fire confetti + toast on first issuance
     if (!wasCertified) {
       Effects.confetti({ count: 100 });
-      Effects.toast('🎉 Sertifikat diterbitkan!', 'ok');
+      Effects.toast(I18N.t('cert.issued'), 'ok');
     }
   }
 

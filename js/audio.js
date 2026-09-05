@@ -37,7 +37,7 @@ const Audio = (() => {
       enabled = !enabled;
       State.set('settings.audio', enabled);
       syncButton();
-      Effects.toast(enabled ? '🔊 Narasi aktif' : '🔇 Narasi nonaktif', enabled ? 'ok' : '');
+      Effects.toast(enabled ? I18N.t('audio.on') : I18N.t('audio.off'), enabled ? 'ok' : '');
       if (!enabled) stop();
     });
   }
@@ -54,10 +54,11 @@ const Audio = (() => {
     if (!enabled || !('speechSynthesis' in window)) return;
     stop();
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'id-ID';
+    const isCN = (typeof I18N !== 'undefined' && I18N.getLang() === 'cn');
+    u.lang = isCN ? 'zh-CN' : 'id-ID';
     u.rate = rate;
     u.pitch = 1;
-    if (idVoice) u.voice = idVoice;
+    if (!isCN && idVoice) u.voice = idVoice;
     lastUtter = u;
     window.speechSynthesis.speak(u);
   }
@@ -81,10 +82,10 @@ const Audio = (() => {
 
   function bindSirene() {
     const lines = {
-      darurat: 'Tanda bahaya! Tanda bahaya! Tanda bahaya! Hentikan semua pekerjaan. Menuju muster point. Mengulang, menuju muster point.',
-      siaga: 'Siaga. Bersiaplah. Dengarkan instruksi selanjutnya.',
-      allclear: 'All clear. Situasi terkendali. Kembali bekerja atas instruksi supervisor.',
-      blasting: 'Tanda peledakan. Peledakan. All clear.',
+      darurat: I18N.t('sirene.darurat'),
+      siaga: I18N.t('sirene.siaga'),
+      allclear: I18N.t('sirene.allclear'),
+      blasting: I18N.t('sirene.blasting'),
     };
     document.querySelectorAll('[data-sirene]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -95,10 +96,11 @@ const Audio = (() => {
         if ('speechSynthesis' in window) {
           window.speechSynthesis.cancel();
           const u = new SpeechSynthesisUtterance(lines[k]);
-          u.lang = 'id-ID';
+          const isCN = (typeof I18N !== 'undefined' && I18N.getLang() === 'cn');
+          u.lang = isCN ? 'zh-CN' : 'id-ID';
           u.rate = rate;
           u.pitch = 1;
-          if (idVoice) u.voice = idVoice;
+          if (!isCN && idVoice) u.voice = idVoice;
           window.speechSynthesis.speak(u);
         }
         setTimeout(() => btn.classList.remove('playing'), 2200);

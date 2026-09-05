@@ -38,7 +38,7 @@ const State = (() => {
     },
     settings: {
       theme: 'dark',          // 'dark' | 'light'
-      lang: 'id',             // 'id' | 'en'
+      lang: 'id',             // 'id' | 'cn'
       audio: false,
       audioRate: 1.0,
       reducedMotion: false,
@@ -50,6 +50,10 @@ const State = (() => {
   };
 
   let data = deepMerge(clone(initial), Storage.get('state', {}));
+  // Migrate legacy lang values ('en' or unknown) to 'id'
+  if (data.settings && data.settings.lang !== 'cn' && data.settings.lang !== 'id') {
+    data.settings.lang = 'id';
+  }
 
   function clone(x) { return JSON.parse(JSON.stringify(x)); }
   function deepMerge(a, b) {

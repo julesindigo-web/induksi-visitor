@@ -6,10 +6,13 @@ const Quiz = (() => {
   let data = null;
 
   async function load() {
-    if (data) return data;
+    const path = (typeof I18N !== 'undefined' ? I18N.quizPath() : 'data/quiz.json');
+    // Cache per language to avoid mixing ID/CN after toggle (toggle reloads anyway)
+    if (data && data._path === path) return data;
     try {
-      const r = await fetch('data/quiz.json');
+      const r = await fetch(path);
       data = await r.json();
+      data._path = path;
     } catch (e) {
       // Fallback minimal data
       data = { pretest: [], posttest: { sections: { lsr: { questions: [] }, umum: { questions: [] } } } };
@@ -25,14 +28,14 @@ const Quiz = (() => {
       const submitted = saved.submitted;
       c.innerHTML = `
         <div class="inner">
-          <div class="kicker k-teal">Evaluasi Awal</div>
-          <h2><em>Pre-Test</em> — Cek Pemahaman Awal</h2>
-          <p class="lead">5 pertanyaan singkat. Hasil tidak menggagalkan kelulusan — tetapi membantu kami memahami baseline pengetahuan Anda.</p>
+          <div class="kicker k-teal">${I18N.t('quiz.pretest.kicker')}</div>
+          <h2><em>Pre-Test</em> — ${I18N.getLang() === 'cn' ? '了解基础' : 'Cek Pemahaman Awal'}</h2>
+          <p class="lead">${I18N.t('quiz.pretest.lead')}</p>
           <div class="quiz" id="pretestList"></div>
           <div id="pretestSummary" class="quiz-summary" style="display:${submitted ? 'block' : 'none'}">
             <div class="score">${saved.score || 0}%</div>
-            <div class="verdict">Pre-test selesai — lanjut ke materi inti.</div>
-            <button class="navbtn primary" id="pretestContinue" style="margin-top:14px">Lanjut ke Materi</button>
+            <div class="verdict">${I18N.t('quiz.pretest.done')}</div>
+            <button class="navbtn primary" id="pretestContinue" style="margin-top:14px">${I18N.t('quiz.pretest.continue')}</button>
           </div>
         </div>
       `;
@@ -44,7 +47,7 @@ const Quiz = (() => {
         const submit = document.createElement('button');
         submit.className = 'navbtn primary';
         submit.style.marginTop = '18px';
-        submit.textContent = 'Kirim Jawaban';
+        submit.textContent = I18N.t('quiz.pretest.submit');
         submit.onclick = () => gradePretest(d);
         c.querySelector('.inner').appendChild(submit);
       } else {
@@ -64,7 +67,7 @@ const Quiz = (() => {
     });
     const score = Math.round((correct / d.pretest.length) * 100);
     State.set('pretest', { answers, submitted: true, score });
-    Effects.toast('Pre-test selesai! Skor: ' + score + '%', 'ok');
+    Effects.toast((I18N.getLang() === 'cn' ? '课前测试完成！得分：' : 'Pre-test selesai! Skor: ') + score + '%', 'ok');
     renderPretest();
   }
 
@@ -79,22 +82,24 @@ const Quiz = (() => {
 
       c.innerHTML = `
         <div class="inner">
-          <div class="kicker">Evaluasi Akhir</div>
-          <h2><em>Post-Test</em> — Sertifikasi Induksi</h2>
-          <p class="lead">Dua bagian. <b style="color:var(--amber)">Life-Saving Rules</b> harus 100% benar. Pengetahuan umum ≥ ${d.posttest.passing}%.</p>
+          <div class="kicker">${I18N.t('quiz.posttest.kicker')}</div>
+          <h2><em>Post-Test</em> — ${I18N.getLang() === 'cn' ? '培训认证' : 'Sertifikasi Induksi'}</h2>
+          <p class="lead">${I18N.getLang() === 'cn'
+            ? '共两部分，<b style="color:var(--amber)">保命规则</b>须满分，通用知识 ≥ ' + d.posttest.passing + '%。'
+            : 'Dua bagian. <b style="color:var(--amber)">Life-Saving Rules</b> harus 100% benar. Pengetahuan umum ≥ ' + d.posttest.passing + '%.'}</p>
 
-          <h3 style="margin-top:24px; font-size:14px; color:var(--amber); letter-spacing:.1em; text-transform:uppercase;">Bagian A — Life-Saving Rules</h3>
+          <h3 style="margin-top:24px; font-size:14px; color:var(--amber); letter-spacing:.1em; text-transform:uppercase;">${I18N.t('quiz.posttest.secA')}</h3>
           <div class="quiz" id="lsrList"></div>
 
-          <h3 style="margin-top:24px; font-size:14px; color:var(--teal); letter-spacing:.1em; text-transform:uppercase;">Bagian B — Pengetahuan Umum</h3>
+          <h3 style="margin-top:24px; font-size:14px; color:var(--teal); letter-spacing:.1em; text-transform:uppercase;">${I18N.t('quiz.posttest.secB')}</h3>
           <div class="quiz" id="umList"></div>
 
           <div id="posttestSummary" class="quiz-summary" style="display:${submitted ? 'block' : 'none'}">
             <div class="score">${saved.score || 0}%</div>
-            <div class="verdict">${(saved.lsrPass && saved.umPass && (saved.score || 0) >= 80) ? '✅ LULUS — lanjut ke tanda tangan & sertifikat.' : '❌ Belum lulus. Pelajari ulang materi & coba remedial.'}</div>
+            <div class="verdict">${(saved.lsrPass && saved.umPass && (saved.score || 0) >= 80) ? I18N.t('quiz.pass') : I18N.t('quiz.fail')}</div>
             ${(saved.lsrPass && saved.umPass && (saved.score || 0) >= 80)
-              ? '<button class="navbtn primary" id="posttestContinue" style="margin-top:14px">Lanjut ke Tanda Tangan</button>'
-              : '<button class="navbtn" id="posttestRetry" style="margin-top:14px">Reset & Coba Lagi</button>'}
+              ? '<button class="navbtn primary" id="posttestContinue" style="margin-top:14px">' + I18N.t('quiz.posttest.continue') + '</button>'
+              : '<button class="navbtn" id="posttestRetry" style="margin-top:14px">' + I18N.t('quiz.posttest.retry') + '</button>'}
           </div>
         </div>
       `;

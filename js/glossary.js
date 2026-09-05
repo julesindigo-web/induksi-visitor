@@ -6,10 +6,12 @@ const Glossary = (() => {
   let data = null;
 
   async function load() {
-    if (data) return data;
+    const path = (typeof I18N !== 'undefined' ? I18N.glossPath() : 'data/glossary.json');
+    if (data && data._path === path) return data;
     try {
-      const r = await fetch('data/glossary.json');
+      const r = await fetch(path);
       data = await r.json();
+      data._path = path;
     } catch (e) { data = { items: [] }; }
     return data;
   }
@@ -19,9 +21,9 @@ const Glossary = (() => {
     const overlay = ensureOverlay();
     overlay.innerHTML = `
       <div class="overlay-header">
-        <div class="overlay-title">📖 Glosarium K3L</div>
+        <div class="overlay-title">${I18N.t('gloss.title')}</div>
         <div class="overlay-actions">
-          <button class="iconbtn" id="glossClose" aria-label="Tutup">
+          <button class="iconbtn" id="glossClose" aria-label="${I18N.t('btn.close')}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
           </button>
         </div>
@@ -29,7 +31,7 @@ const Glossary = (() => {
       <div style="max-width:var(--menu-max); margin:0 auto;">
         <div class="gloss-search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg>
-          <input id="glossQ" type="search" placeholder="Cari istilah... (mis. LOTO, APD, HIRADC)" autocomplete="off"/>
+          <input id="glossQ" type="search" placeholder="${I18N.t('gloss.ph')}" autocomplete="off"/>
         </div>
         <div class="gloss-grid" id="glossGrid"></div>
       </div>
@@ -53,7 +55,7 @@ const Glossary = (() => {
     const g = document.getElementById('glossGrid');
     if (!g) return;
     if (!items.length) {
-      g.innerHTML = '<div style="padding:30px; text-align:center; color:var(--muted)">Tidak ada istilah ditemukan.</div>';
+      g.innerHTML = '<div style="padding:30px; text-align:center; color:var(--muted)">' + I18N.t('gloss.none') + '</div>';
       return;
     }
     g.innerHTML = items.map(it => `
