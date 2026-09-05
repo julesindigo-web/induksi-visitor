@@ -32,8 +32,8 @@ const I18N = (() => {
 
   const STR = {
     id: {
-      'doc.title': 'Induksi Visitor K3L — PT. Sifang Mining Indonesia | Visitor Only',
-      'doc.desc': 'Induksi Visitor K3L PT. Sifang Mining Indonesia — Khusus Tamu/Visitor escorted. Ringkas, fokus keselamatan visitor, 26 tampilan, Visitor Pass 7 hari.',
+      'doc.title': 'Induksi Visitor K3L — PT. Auxin & PT. Sifang Mining | Visitor Only',
+      'doc.desc': 'Induksi Visitor K3L PT. Auxin Development Indonesia & PT. Sifang Mining Indonesia (kontraktor) — Khusus Tamu/Visitor escorted. 26 tampilan, Visitor Pass 7 hari.',
       'brand.pill': 'VISITOR INDUCTION • ESCORTED ONLY • 7-DAY PASS',
       'menu.title': 'DAFTAR MATERI INDUKSI',
       'nav.prev': 'Sebelumnya',
@@ -96,8 +96,8 @@ const I18N = (() => {
       'cert.share': '📤 Bagikan',
     },
     cn: {
-      'doc.title': 'K3L 访客入场培训 — 印尼四方矿业 | 仅限访客',
-      'doc.desc': '印尼四方矿业K3L访客入场培训——仅限陪同访客。简明访客安全须知，共26页，7天访客证。',
+      'doc.title': 'K3L 访客入场培训 — PT Auxin × 印尼四方矿业 | 仅限访客',
+      'doc.desc': 'PT Auxin Development Indonesia与印尼四方矿业（承包商）K3L访客入场培训——仅限陪同访客，共26页，7天访客证。',
       'brand.pill': '访客培训 • 须全程陪同 • 7天通行证',
       'menu.title': '培训目录',
       'nav.prev': '上一页',

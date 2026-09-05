@@ -48,8 +48,17 @@ const SLIDES_DATA = [
           </svg>
         </div>
         <div class="inner">
-          <div class="logo-big logo-png" style="background-image:url('assets/logo-full.png')" role="img" aria-label="PT. Sifang Mining Indonesia"></div>
-          <div class="co">PT. Sifang Mining Indonesia</div>
+          <div class="dual-logos">
+            <div class="logo-card owner">
+              <img src="assets/logo-auxin.png" alt="Logo PT. Auxin Development Indonesia" loading="lazy"/>
+              <small>Owner • PT. Auxin Development Indonesia</small>
+            </div>
+            <div class="logo-card">
+              <img src="assets/logo-sifang.png" alt="Logo PT. Sifang Mining Indonesia" loading="lazy"/>
+              <small>Kontraktor • PT. Sifang Mining Indonesia</small>
+            </div>
+          </div>
+          <div class="co">PT. Auxin Development Indonesia × PT. Sifang Mining Indonesia</div>
           <h1 style="margin-top:10px">INDUKSI <em>VISITOR</em><br/>PERTAMBANGAN NIKEL OPEN PIT</h1>
           <div class="hazard" style="margin-left:auto;margin-right:auto;"></div>
           <p class="lead" style="margin:14px auto 0; text-align:center; max-width:720px">
@@ -236,7 +245,7 @@ const SLIDES_DATA = [
           </div>
           <div class="bigquote" style="margin-top:32px;">
             “Sebagai tamu, tugas Anda sederhana: <b>ikuti escort, pakai APD, jangan lepas rombongan.</b> 3 hal itu menyelamatkan nyawa.”
-            <small>— HSE PT. Sifang Mining Indonesia — Visitor Safety</small>
+            <small>— HSE Auxin × Sifang — Visitor Safety</small>
           </div>
         </div>
       `;
@@ -262,7 +271,7 @@ const SLIDES_DATA = [
       return `
         <div class="inner">
           <div class="kicker">Visitor — Kenali Tempat Anda</div>
-          <h2>Profil <em>PT Sifang — Open Pit Nikel</em></h2>
+          <h2>Profil <em>Site Auxin–Sifang — Open Pit Nikel</em></h2>
           <p class="lead">Anda kunjungi tambang <b>nikel laterit open pit</b> aktif — bukan museum. Karakter tanah & alat menentukan bahaya Anda sebagai tamu.</p>
           <div class="cards stagger">
             <article class="card b"><div class="ico">${Icons.get('pickup', { class: 'ico-svg' })}</div><h3>Metode & Tanah</h3><p><b>Open pit laterit</b> (limonit & saprolit). Laterit basah = <b>licin super & rawan longsor</b>. Jangan anggap seperti jalan aspal kota.</p></article>
@@ -334,7 +343,7 @@ const SLIDES_DATA = [
             <li><b>4. Dilarang mengemudi di haul road</b> tanpa KIMPER & izin; sebagai penumpang wajib seatbelt & no HP.</li>
             <li><b>5. Dilarang merokok/vape</b> kecuali smoking area bertanda; <b>Fuel Farm & B3 = zero api/HP</b>.</li>
             <li><b>6. Foto/video/drone HANYA izin tertulis</b> HSE — jangan posting medsos area kritis.</li>
-            <li><b>7. Jangan sentuh</b> alat, panel listrik, valve, conveyor, atau apapun di plant/workshop.</li>
+            <li><b>7. Jangan sentuh</b> alat, panel listrik, valve, mesin berputar, atau apapun di plant/workshop.</li>
             <li><b>8. Patuhi rambu & barricade:</b> pita kuning/merah = JANGAN LEWAT tanpa otorisasi.</li>
             <li><b>9. Fit to Visit:</b> lapor bila demam, pusing, habis minum obat kantuk / alkohol — kunjungan bisa ditunda.</li>
             <li><b>10. Lapor bahaya/near miss</b> ke escort — sekecil apapun. Tamu yang lapor = tamu peduli.</li>
@@ -359,7 +368,7 @@ const SLIDES_DATA = [
           <div class="cards stagger">
             <article class="card g" style="border-color:var(--green-line)"><div class="ico">${Icons.get('check', { class: 'ico-svg', stroke: 'var(--green)' })}</div><h3 style="color:var(--green)">HIJAU — Boleh (dengan APD)</h3><ul><li>Office, meeting room, lobby, kantin, clinic, muster point</li><li>Viewpoint aman (ditentukan HSE)</li><li>Jalur pedestrian bertanda</li></ul></article>
             <article class="card" style="border-color:var(--amber-line)"><div class="ico">${Icons.get('warn', { class: 'ico-svg', stroke: 'var(--amber)' })}</div><h3 style="color:var(--amber)">KUNING — Hanya dengan Escort</h3><ul><li>Haul road (sebagai penumpang, seatbelt, no HP)</li><li>Stockpile viewpoint, jetty (life jacket wajib)</li><li>Plant perimeter — jangan dekat moving parts</li></ul></article>
-            <article class="card r" style="border-color:var(--red-line)"><div class="ico">${Icons.get('stop', { class: 'ico-svg', stroke: 'var(--red)' })}</div><h3 style="color:var(--red)">MERAH — Dilarang Total</h3><ul><li>Pit face, disposal aktif, sump, highwall dekat crest</li><li>Workshop pits, panel listrik, fuel farm, gudang B3 (tanpa izin khusus)</li><li>TSF, conveyor gallery, confined space, ketinggian</li></ul></article>
+            <article class="card r" style="border-color:var(--red-line)"><div class="ico">${Icons.get('stop', { class: 'ico-svg', stroke: 'var(--red)' })}</div><h3 style="color:var(--red)">MERAH — Dilarang Total</h3><ul><li>Pit face, disposal aktif, sump, highwall dekat crest</li><li>Workshop pits, panel listrik, fuel farm, gudang B3 (tanpa izin khusus)</li><li>TSF, area plant terbatas, confined space, ketinggian</li></ul></article>
           </div>
           <div class="panelbox" style="margin-top:16px">
             <h3><i></i>Cara Tahu Zona Saya?</h3>
@@ -570,7 +579,7 @@ const SLIDES_DATA = [
           <div class="cards stagger">
             <article class="card r"><div class="ico">${Icons.get('mountain', { class: 'ico-svg' })}</div><h3>Longsor & Mudflow Laterit</h3><p><b>Tanda:</b> retakan di crest, rembesan air, suara gemuruh. Laterit basah = lumpur cair bisa telan alat. <b>Visitor: menjauh, lapor — jangan foto dekat.</b></p></article>
             <article class="card"><div class="ico">${Icons.get('truck', { class: 'ico-svg' })}</div><h3>Alat Berat — Exclusion Zone</h3><p>Jangan masuk radius swing HE. <b>Tunggu HE berhenti total</b> & operator beri sinyal baru mendekat (itupun hanya bila escort izinkan).</p></article>
-            <article class="card b"><div class="ico">${Icons.get('factory', { class: 'ico-svg' })}</div><h3>Plant / Conveyor</h3><p>Moving parts (pulley, belt) = jepit/tertarik. Guard jangan dilepas. Conveyor: <b>crossing point saja</b>, jangan jalan di atas belt, kenali pull cord darurat.</p></article>
+            <article class="card b"><div class="ico">${Icons.get('factory', { class: 'ico-svg' })}</div><h3>Plant / Area Mesin</h3><p>Mesin berputar = risiko jepit/tertarik. Guard jangan dilepas. Tetap di jalur escort, <b>jangan sentuh peralatan apapun</b>.</p></article>
             <article class="card t"><div class="ico">${Icons.get('fire', { class: 'ico-svg' })}</div><h3>Kebakaran Unit / Fuel Farm</h3><p>Kenali APAR unit. Bau BBM menyengat / tumpahan = lapor, jangan nyalakan api/HP.</p></article>
             <article class="card"><div class="ico">${Icons.get('drop', { class: 'ico-svg' })}</div><h3>Jetty & Air (jika kunjungan ke jetty)</h3><p>Life jacket wajib, snap-back mooring line = bahaya, Grup A nikel ore risiko likuefaksi — jangan dekat tepi tanpa palang.</p></article>
             <article class="card g"><div class="ico">${Icons.get('tools', { class: 'ico-svg' })}</div><h3>Yang TIDAK Perlu Anda Kuasai (untuk pekerja)</h3><ul><li>LOTO 7 langkah, panel listrik, scaffolding, confined space gas test, hot work, lifting plan, galian shoring — <b>visitor dilarang melakukan ini</b>.</li></ul></article>
@@ -806,7 +815,7 @@ const SLIDES_DATA = [
           <div class="bigquote">
             "Sebagai tamu, saya berkomitmen: <b>mengikuti escort, memakai APD, menghormati rambu, & tidak memasuki area terlarang.</b>
             Saya paham Visitor Pass ini hanya untuk akses didampingi & berlaku 7 hari."
-            <small>— Ikrar Visitor PT. Sifang Mining Indonesia</small>
+            <small>— Ikrar Visitor PT. Auxin Development Indonesia & PT. Sifang Mining Indonesia</small>
           </div>
           <ul class="checks cols" style="margin-top:22px">
             <li>Saya akan <b>selalu didampingi escort</b> & tidak terpisah dari rombongan.</li>
@@ -873,7 +882,16 @@ const SLIDES_DATA = [
     render() {
       return `
         <div class="inner" style="text-align:center; padding-top:30px">
-          <div class="logo-big logo-png" style="background-image:url('assets/logo-full.png')" role="img" aria-label="PT. Sifang Mining Indonesia"></div>
+          <div class="dual-logos" style="max-width:640px">
+            <div class="logo-card owner">
+              <img src="assets/logo-auxin.png" alt="Logo PT. Auxin Development Indonesia" loading="lazy"/>
+              <small>Owner • PT. Auxin Development Indonesia</small>
+            </div>
+            <div class="logo-card">
+              <img src="assets/logo-sifang.png" alt="Logo PT. Sifang Mining Indonesia" loading="lazy"/>
+              <small>Kontraktor • PT. Sifang Mining Indonesia</small>
+            </div>
+          </div>
           <h1 style="margin-top:14px">Terima <em>Kasih</em> — Visitor</h1>
           <div class="hazard" style="margin-left:auto;margin-right:auto;"></div>
           <p class="lead" style="margin:14px auto 0; text-align:center; max-width:680px;">
@@ -897,7 +915,7 @@ const SLIDES_DATA = [
           </div>
           <div class="bigquote" style="margin-top:34px; text-align:left;">
             “Tamu terbaik bukan yang paling penting — tapi yang paling patuh pada keselamatan.”
-            <small>— HSE PT. Sifang Mining Indonesia — Visitor Safety</small>
+            <small>— HSE Auxin × Sifang — Visitor Safety</small>
           </div>
         </div>
       `;

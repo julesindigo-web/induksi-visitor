@@ -29,8 +29,17 @@ const SLIDES_DATA_CN = [
           </svg>
         </div>
         <div class="inner">
-          <div class="logo-big logo-png" style="background-image:url('assets/logo-full.png')" role="img" aria-label="印尼四方矿业"></div>
-          <div class="co">印尼四方矿业</div>
+          <div class="dual-logos">
+            <div class="logo-card owner">
+              <img src="assets/logo-auxin.png" alt="PT Auxin Development Indonesia 标志" loading="lazy"/>
+              <small>业主 • PT Auxin Development Indonesia</small>
+            </div>
+            <div class="logo-card">
+              <img src="assets/logo-sifang.png" alt="印尼四方矿业标志" loading="lazy"/>
+              <small>承包商 • 印尼四方矿业</small>
+            </div>
+          </div>
+          <div class="co">PT Auxin Development Indonesia × 印尼四方矿业</div>
           <h1 style="margin-top:10px">访客<em>入场</em><br/>镍露天矿安全培训</h1>
           <div class="hazard" style="margin-left:auto;margin-right:auto;"></div>
           <p class="lead" style="margin:14px auto 0; text-align:center; max-width:720px">
@@ -195,7 +204,7 @@ const SLIDES_DATA_CN = [
           </div>
           <div class="bigquote" style="margin-top:32px;">
             “访客职责很简单：<b>跟陪同、戴防护、不离队。</b>三条可救命。”
-            <small>— 四方矿业HSE — 访客安全</small>
+            <small>— Auxin × 四方 HSE — 访客安全</small>
           </div>
         </div>
       `;
@@ -217,7 +226,7 @@ const SLIDES_DATA_CN = [
       return `
         <div class="inner">
           <div class="kicker">访客 — 认识矿区</div>
-          <h2><em>四方镍露天矿</em>概况</h2>
+          <h2><em>Auxin–四方</em>镍露天矿概况</h2>
           <p class="lead">您参观的是生产中的<b>红土镍露天矿</b>——不是博物馆，土质与设备决定您的风险。</p>
           <div class="cards stagger">
             <article class="card b"><div class="ico">${Icons.get('pickup', { class: 'ico-svg' })}</div><h3>工艺与土质</h3><p><b>露天红土</b>（褐铁矿与腐岩）。湿红土<b>超滑易滑坡</b>，别当城市柏油路。</p></article>
@@ -285,7 +294,7 @@ const SLIDES_DATA_CN = [
             <li><b>4. 无公司驾照禁在运输路开车</b>；乘车系带、不碰手机。</li>
             <li><b>5. 禁烟/电子烟</b>，仅指定吸烟区；<b>油库危化品区零明火零手机</b>。</li>
             <li><b>6. 拍照录像无人机须HSE书面许可</b>——禁发关键区。</li>
-            <li><b>7. 不触摸</b>设备、电柜、阀门、皮带及车间任何物品。</li>
+            <li><b>7. 不触摸</b>设备、电柜、阀门、转动机器及车间任何物品。</li>
             <li><b>8. 服从标志围栏：</b>黄红带=未经批准禁过。</li>
             <li><b>9. 到访健康：</b>发烧头晕服嗜睡药/饮酒请申报，可推迟。</li>
             <li><b>10. 报隐患险兆</b>给陪同——再小也要报，报告者值得尊敬。</li>
@@ -507,7 +516,7 @@ const SLIDES_DATA_CN = [
           <div class="cards stagger">
             <article class="card r"><div class="ico">${Icons.get('mountain', { class: 'ico-svg' })}</div><h3>滑坡与流泥</h3><p><b>征兆：</b>坡顶裂缝、渗水、轰鸣。湿红土如流泥可吞设备。<b>访客：远离上报，不近距离拍照。</b></p></article>
             <article class="card"><div class="ico">${Icons.get('truck', { class: 'ico-svg' })}</div><h3>重型设备——隔离区</h3><p>禁入回转半径。<b>等设备完全停稳</b>并经司机示意，且陪同允许才靠近。</p></article>
-            <article class="card b"><div class="ico">${Icons.get('factory', { class: 'ico-svg' })}</div><h3>选厂/皮带</h3><p>转动部位夹卷，护罩禁拆。皮带：<b>只走过桥</b>，不踩皮带，认紧急拉绳。</p></article>
+            <article class="card b"><div class="ico">${Icons.get('factory', { class: 'ico-svg' })}</div><h3>选厂/机械区</h3><p>转动部位夹卷，护罩禁拆。跟紧陪同路线，<b>不触摸任何设备</b>。</p></article>
             <article class="card t"><div class="ico">${Icons.get('fire', { class: 'ico-svg' })}</div><h3>设备火灾/油库</h3><p>认车载灭火器，闻浓油味/见泄漏即报，不动火不用手机。</p></article>
             <article class="card"><div class="ico">${Icons.get('drop', { class: 'ico-svg' })}</div><h3>码头与水域（如去码头）</h3><p>须救生衣，防缆绳回弹，A类镍矿有液化风险——无护栏不近边。</p></article>
             <article class="card g"><div class="ico">${Icons.get('tools', { class: 'ico-svg' })}</div><h3>您不须掌握（员工内容）</h3><ul><li>上锁挂牌7步、配电、脚手架、受限空间测气、动火、吊装、基坑支护——<b>访客禁做</b>。</li></ul></article>
@@ -701,7 +710,7 @@ const SLIDES_DATA_CN = [
           <h2>访客<em>承诺签名</em></h2>
           <div class="bigquote">
             "作为访客，我承诺：<b>跟陪同、戴防护、守标志、不进禁区。</b>本人知晓访客证仅限陪同参观，7天有效。"
-            <small>— 四方矿业访客誓言</small>
+            <small>— Auxin × 四方访客誓言</small>
           </div>
           <ul class="checks cols" style="margin-top:22px">
             <li>本人将<b>全程陪同</b>不离队。</li>
@@ -756,7 +765,16 @@ const SLIDES_DATA_CN = [
     render() {
       return `
         <div class="inner" style="text-align:center; padding-top:30px">
-          <div class="logo-big logo-png" style="background-image:url('assets/logo-full.png')" role="img" aria-label="印尼四方矿业"></div>
+          <div class="dual-logos" style="max-width:640px">
+            <div class="logo-card owner">
+              <img src="assets/logo-auxin.png" alt="PT Auxin Development Indonesia 标志" loading="lazy"/>
+              <small>业主 • PT Auxin Development Indonesia</small>
+            </div>
+            <div class="logo-card">
+              <img src="assets/logo-sifang.png" alt="印尼四方矿业标志" loading="lazy"/>
+              <small>承包商 • 印尼四方矿业</small>
+            </div>
+          </div>
           <h1 style="margin-top:14px">感谢<em>您</em> — 访客</h1>
           <div class="hazard" style="margin-left:auto;margin-right:auto;"></div>
           <p class="lead" style="margin:14px auto 0; text-align:center; max-width:680px;">
@@ -779,7 +797,7 @@ const SLIDES_DATA_CN = [
           </div>
           <div class="bigquote" style="margin-top:34px; text-align:left;">
             “最好的客人不是最重要的，而是最守安全的。”
-            <small>— 四方矿业HSE — 访客安全</small>
+            <small>— Auxin × 四方 HSE — 访客安全</small>
           </div>
         </div>
       `;

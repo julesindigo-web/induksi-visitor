@@ -65,14 +65,16 @@ const Certificate = (() => {
     c.innerHTML = `
       <div class="inner">
         <div class="kicker">Penutup · VISITOR PASS</div>
-        <h2>Visitor Pass <em>K3L</em> — PT Sifang Mining Indonesia</h2>
-        <p class="lead">Selamat! Anda telah lulus <b>Induksi Visitor</b>. Pass ini wajib dibawa selama kunjungan dan hanya berlaku untuk akses didampingi (escorted).</p>
+        <h2>${I18N.getLang() === 'cn' ? '访客证 <em>K3L</em> — Auxin × 四方矿业' : 'Visitor Pass <em>K3L</em> — Auxin × Sifang'}</h2>
+        <p class="lead">${I18N.getLang() === 'cn'
+          ? '恭喜！您已通过<b>访客培训</b>，本证参观期间须随身携带，仅限陪同参观。'
+          : 'Selamat! Anda telah lulus <b>Induksi Visitor</b>. Pass ini wajib dibawa selama kunjungan dan hanya berlaku untuk akses didampingi (escorted).'}</p>
 
         <div class="cert visitor" id="certPrint" style="border-top:4px solid var(--amber)">
           <div class="cert-header">
             <div class="left">
               <div class="logo-mark">${Icons.get('shield', { size: 32, stroke: '#2b3990', sw: 1.5 })}</div>
-              <h3>PT. Sifang Mining Indonesia<small>VISITOR SAFETY INDUCTION PASS · Nikel Open Pit</small></h3>
+              <h3>Auxin × Sifang Mining<small>VISITOR SAFETY INDUCTION PASS · Nikel Open Pit</small></h3>
             </div>
             <div class="right">
               <b style="color:#1e293b">No. Visitor Pass</b><br/>
@@ -80,34 +82,39 @@ const Certificate = (() => {
             </div>
           </div>
           <div class="cert-body">
-            <div class="cert-sub">Visitor Pass — Safety Induction</div>
-            <div class="cert-title">Induksi Keselamatan Visitor</div>
-            <p class="cert-statement">Dengan ini menyatakan bahwa:</p>
-            <div class="cert-name">${escapeHtml(u.name || '— Nama Visitor —')}</div>
-            <p class="cert-id">ID: ${escapeHtml(u.nik || '—')} · Instansi: ${escapeHtml(u.position || '—')} · Keperluan: ${escapeHtml(u.department || '—')}${u.host ? ' · Pendamping: ' + escapeHtml(u.host) : ''}</p>
+            <div class="cert-sub">${I18N.getLang() === 'cn' ? '访客证 — 安全培训' : 'Visitor Pass — Safety Induction'}</div>
+            <div class="cert-title">${I18N.getLang() === 'cn' ? '访客安全培训' : 'Induksi Keselamatan Visitor'}</div>
+            <p class="cert-statement">${I18N.getLang() === 'cn' ? '兹证明：' : 'Dengan ini menyatakan bahwa:'}</p>
+            <div class="cert-name">${escapeHtml(u.name || (I18N.getLang() === 'cn' ? '— 访客姓名 —' : '— Nama Visitor —'))}</div>
+            <p class="cert-id">${I18N.getLang() === 'cn'
+              ? '证件：' + escapeHtml(u.nik || '—') + ' · 单位：' + escapeHtml(u.position || '—') + ' · 事由：' + escapeHtml(u.department || '—') + (u.host ? ' · 陪同：' + escapeHtml(u.host) : '')
+              : 'ID: ' + escapeHtml(u.nik || '—') + ' · Instansi: ' + escapeHtml(u.position || '—') + ' · Keperluan: ' + escapeHtml(u.department || '—') + (u.host ? ' · Pendamping: ' + escapeHtml(u.host) : '')}</p>
 
             <p class="cert-statement" style="margin-top:14px">
-              telah menyelesaikan dan lulus Program Induksi Visitor K3L (ringkas, fokus visitor) dengan skor:
-              <b style="color:var(--brand-indigo)">${post.score}%</b>. Berlaku <b>terbatas sebagai tamu didampingi</b>, bukan sebagai pekerja.
+              ${I18N.getLang() === 'cn'
+                ? '已完成并通过访客安全培训（简明访客版），得分：<b style="color:var(--brand-indigo)">' + post.score + '%</b>，仅限<b>陪同参观</b>，非员工资格。'
+                : 'telah menyelesaikan dan lulus Program Induksi Visitor K3L (ringkas, fokus visitor) dengan skor: <b style="color:var(--brand-indigo)">' + post.score + '%</b>. Berlaku <b>terbatas sebagai tamu didampingi</b>, bukan sebagai pekerja.'}
             </p>
 
             <div class="cert-details">
-              <div class="cert-detail"><div class="lbl">Tanggal Terbit</div><div class="val">${formatDate(date)}</div></div>
-              <div class="cert-detail"><div class="lbl">Berlaku Sampai (7 hari)</div><div class="val">${formatDate(expiry)}</div></div>
-              <div class="cert-detail"><div class="lbl">Status</div><div class="val">VISITOR · ESCORTED · ZERO HARM</div></div>
+              <div class="cert-detail"><div class="lbl">${I18N.getLang() === 'cn' ? '签发日期' : 'Tanggal Terbit'}</div><div class="val">${formatDate(date)}</div></div>
+              <div class="cert-detail"><div class="lbl">${I18N.getLang() === 'cn' ? '有效期至（7天）' : 'Berlaku Sampai (7 hari)'}</div><div class="val">${formatDate(expiry)}</div></div>
+              <div class="cert-detail"><div class="lbl">${I18N.getLang() === 'cn' ? '状态' : 'Status'}</div><div class="val">VISITOR · ESCORTED · ZERO HARM</div></div>
             </div>
             <p style="text-align:center; margin-top:10px; font-size:11px; color:var(--muted); line-height:1.5">
-              ⚠️ <b>Visitor dilarang:</b> masuk pit / plant / workshop tanpa escort · mengemudi sendiri di haul road · mengoperasikan alat · foto/drone tanpa izin · merokok di luar smoking area
+              ${I18N.getLang() === 'cn'
+                ? '⚠️ <b>访客禁令：</b>无陪同禁入采坑/选厂/车间 · 运输路禁自驾 · 禁操作设备 · 无许可禁拍/飞无人机 · 吸烟区外禁烟'
+                : '⚠️ <b>Visitor dilarang:</b> masuk pit / plant / workshop tanpa escort · mengemudi sendiri di haul road · mengoperasikan alat · foto/drone tanpa izin · merokok di luar smoking area'}
             </p>
           </div>
           <div class="cert-footer">
             <div class="cert-sig">
               <div class="line">${u.name || ''}</div>
-              <small>Visitor</small>
+              <small>${I18N.getLang() === 'cn' ? '访客' : 'Visitor'}</small>
             </div>
             <div class="cert-sig">
               <div class="line">HSE Department</div>
-              <small>Disahkan oleh · Host: ${escapeHtml(u.host || '—')}</small>
+              <small>${I18N.getLang() === 'cn' ? '签发 · 陪同：' + escapeHtml(u.host || '—') : 'Disahkan oleh · Host: ' + escapeHtml(u.host || '—')}</small>
             </div>
           </div>
         </div>
@@ -117,7 +124,9 @@ const Certificate = (() => {
           <button class="navbtn" id="certShare">${I18N.t('cert.share')}</button>
         </div>
 
-        <div class="footnote" style="margin-top:14px">Visitor Pass <b>bukan sertifikat pekerja</b>. Berlaku <b>maks. 7 hari</b> & wajib didampingi. Untuk kunjungan berikutnya wajib induksi ulang. Dilarang mengoperasikan alat berat / masuk area terlarang.</div>
+        <div class="footnote" style="margin-top:14px">${I18N.getLang() === 'cn'
+          ? '访客证<b>非员工证书</b>，<b>最长7天</b>须陪同，下次来访须重训。禁操作重型设备/禁入禁区。'
+          : 'Visitor Pass <b>bukan sertifikat pekerja</b>. Berlaku <b>maks. 7 hari</b> & wajib didampingi. Untuk kunjungan berikutnya wajib induksi ulang. Dilarang mengoperasikan alat berat / masuk area terlarang.'}</div>
       </div>
     `;
 
@@ -146,6 +155,9 @@ const Certificate = (() => {
   function formatDate(s) {
     if (!s) return '—';
     const d = new Date(s);
+    if (typeof I18N !== 'undefined' && I18N.getLang() === 'cn') {
+      return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+    }
     const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
     return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
   }
@@ -160,7 +172,9 @@ const Certificate = (() => {
 
   async function share() {
     const u = State.get('user') || {};
-    const text = `Saya ${u.name || ''} (${u.nik || ''}) telah lulus Induksi Visitor PT. Sifang Mining Indonesia! Skor: ${State.get('posttest').score}% · Visitor Pass 7 hari · #ZeroHarm #VisitorSafety`;
+    const text = I18N.getLang() === 'cn'
+      ? `我${u.name || ''}（${u.nik || ''}）已通过 Auxin × 四方矿业访客培训！得分：${State.get('posttest').score}% · 7天访客证 · #ZeroHarm`
+      : `Saya ${u.name || ''} (${u.nik || ''}) telah lulus Induksi Visitor PT. Auxin × Sifang Mining! Skor: ${State.get('posttest').score}% · Visitor Pass 7 hari · #ZeroHarm #VisitorSafety`;
     if (navigator.share) {
       try {
         await navigator.share({ title: 'Sertifikat Induksi K3L', text });
